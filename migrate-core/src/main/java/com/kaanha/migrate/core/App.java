@@ -12,7 +12,6 @@ public class App {
 
 	public static void main(String[] args) throws RestClientException, URISyntaxException, IOException {
 		RallyToJiraEngine engine = new RallyToJiraEngine();
-		engine.migrate();
-		
+		engine.migrate();		
 	}
 }
