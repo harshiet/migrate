@@ -39,7 +39,7 @@ public class PersistenceTest {
 		rallyWorkspace.addAttributes("Projects");
 
 		SystemArtifactAttribute rallyProjectName = rallyProject.addAttribute("Name");
-		SystemArtifactAttribute rallyProjectOwner = rallyProject.addAttribute("Owner");
+		SystemArtifactAttribute rallyProjectOwner = rallyProject.addAttribute("Owner").withChildAttribute("_refObjectName");
 		rallyProject.addAttribute("objectid");
 		rallyProject.addAttribute("iterations");
 

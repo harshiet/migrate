@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +19,8 @@ public class SystemArtifactAttribute extends Persistable {
 	@Column(columnDefinition = "TEXT")
 	String name;
 
+	boolean hasChild = false;
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "source", referencedColumnName = "ID")
 	List<AttributeMapping> attributeMappings = new ArrayList<AttributeMapping>();
@@ -25,6 +28,10 @@ public class SystemArtifactAttribute extends Persistable {
 	@ManyToOne
 	@JoinColumn(name = "system_artifact_id", referencedColumnName = "ID")
 	private SystemArtifact artifact;
+
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "child_attribute", referencedColumnName = "ID")
+	SystemArtifactAttribute childAttribute;
 
 	public SystemArtifactAttribute() {
 		super();
@@ -69,6 +76,21 @@ public class SystemArtifactAttribute extends Persistable {
 			}
 		}
 		return null;
+	}
+
+	public SystemArtifactAttribute withChildAttribute(String childAttributeName) {
+		SystemArtifactAttribute childAttribute = new SystemArtifactAttribute(childAttributeName);
+		this.childAttribute = childAttribute;
+		this.hasChild = true;
+		return this;
+	}
+
+	public boolean hasChild() {
+		return hasChild;
+	}
+
+	public SystemArtifactAttribute getChildAttribute() {
+		return childAttribute;
 	}
 
 }

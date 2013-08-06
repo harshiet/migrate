@@ -3,6 +3,7 @@ package com.kaanha.core.migrate.engine;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -16,6 +17,7 @@ import com.kaanha.migrate.core.persistence.domain.SystemArtifactAttribute;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
 
 public class RallyToJiraTransformationEngine extends TransformationEngine {
+	private static Logger logger = Logger.getLogger(Thread.currentThread().getStackTrace()[0].getClassName());
 
 	public RallyToJiraTransformationEngine(SystemX source, SystemX target) {
 		super(source, target);
@@ -45,23 +47,26 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 	private JsonObject mapValues(JsonObject sourceObject, Map<String, String> map) {
 		List<SystemArtifactAttribute> attributes = target.getArtifactofType(ArtifactType.PROJECT).getAttributes();
 		for (SystemArtifactAttribute attribute : attributes) {
-			JsonElement attributeValue = sourceObject.get(attribute.getAttributeMapping(source));
-			if (!attributeValue.isJsonNull()) {
-				String strValue = "";
-				if (attributeValue.isJsonObject()) {
-					JsonObject attributeValueObject = attributeValue.getAsJsonObject();
-					attributeValue = attributeValueObject.get("_refObjectName");
-					if (!attributeValue.isJsonNull()) {
-						strValue = attributeValue.getAsString();
-					}
-				} else {
-					strValue = attributeValue.getAsString();
+			String attributeMapping = attribute.getAttributeMapping(source);
+			JsonElement attributeValue = sourceObject.get(attributeMapping);
+
+			while (attribute.hasChild()) {
+				if (attributeValue == null) {
+					logger.warning("Null " + attributeMapping);
+					break;
 				}
-				if (StringUtils.isNotBlank(strValue)) {
-					map.put(attribute.getName(), strValue);
+				if (attributeValue.isJsonNull()) {
+					break;
 				}
+				attribute = attribute.getChildAttribute();
+				attributeMapping = attribute.getName();
+				attributeValue = attributeValue.getAsJsonObject().get(attributeMapping);
+			}
+			if (attributeValue!=null && StringUtils.isNotBlank(attributeValue.getAsString())) {
+				map.put(attribute.getName(), attributeValue.getAsString());
 			}
 		}
+
 		Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 		JsonObject json = (JsonObject) (new JsonParser()).parse(gson.toJson(map));
 		return json;
