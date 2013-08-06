@@ -60,7 +60,7 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 					break;
 				}
 				mappedAttribute = mappedAttribute.getChildAttribute();
-				attributeMapping = attribute.getName();
+				attributeMapping = mappedAttribute.getName();
 				attributeValue = attributeValue.getAsJsonObject().get(attributeMapping);
 			}
 			if (attributeValue != null && StringUtils.isNotBlank(attributeValue.getAsString())) {
