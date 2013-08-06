@@ -69,10 +69,10 @@ public class SystemArtifactAttribute extends Persistable {
 		this.artifact = artifact;
 	}
 
-	public String getAttributeMapping(SystemX source) {
+	public SystemArtifactAttribute getAttributeMapping(SystemX source) {
 		for (AttributeMapping attributeMapping : getAttributeMappings()) {
 			if (attributeMapping.getMappedAttribute().getArtifact().getSystem().equals(source)) {
-				return attributeMapping.getMappedAttribute().getName();
+				return attributeMapping.getMappedAttribute();
 			}
 		}
 		return null;

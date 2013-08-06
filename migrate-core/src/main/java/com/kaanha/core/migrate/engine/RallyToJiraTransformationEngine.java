@@ -47,10 +47,11 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 	private JsonObject mapValues(JsonObject sourceObject, Map<String, String> map) {
 		List<SystemArtifactAttribute> attributes = target.getArtifactofType(ArtifactType.PROJECT).getAttributes();
 		for (SystemArtifactAttribute attribute : attributes) {
-			String attributeMapping = attribute.getAttributeMapping(source);
+			SystemArtifactAttribute mappedAttribute = attribute.getAttributeMapping(source);
+			String attributeMapping = mappedAttribute.getName();
 			JsonElement attributeValue = sourceObject.get(attributeMapping);
 
-			while (attribute.hasChild()) {
+			while (mappedAttribute.hasChild()) {
 				if (attributeValue == null) {
 					logger.warning("Null " + attributeMapping);
 					break;
@@ -58,11 +59,11 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 				if (attributeValue.isJsonNull()) {
 					break;
 				}
-				attribute = attribute.getChildAttribute();
+				mappedAttribute = attribute.getChildAttribute();
 				attributeMapping = attribute.getName();
 				attributeValue = attributeValue.getAsJsonObject().get(attributeMapping);
 			}
-			if (attributeValue!=null && StringUtils.isNotBlank(attributeValue.getAsString())) {
+			if (attributeValue != null && StringUtils.isNotBlank(attributeValue.getAsString())) {
 				map.put(attribute.getName(), attributeValue.getAsString());
 			}
 		}
