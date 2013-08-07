@@ -31,7 +31,8 @@ public class RallyToJiraEngine {
 	}
 
 	public void migrate() throws RestClientException, URISyntaxException, IOException {
-		RallyReadApi rally = new RallyReadApi("https://rally1.rallydev.com/slm/webservice/v2.0/", "rally.user.2@gmail.com", "RallyUser123!", dbRepository);
+		RallyReadApi rally = new RallyReadApi("https://rally1.rallydev.com/slm/webservice/v2.0/",
+				"rally.user.2@gmail.com", "RallyUser123!", dbRepository);
 		JiraWriteApi jira = new JiraWriteApi("https://agiletool.executiveboard.com", "hagarwal", "1234");
 
 		JsonArray subscriptions = rally.getSubscriptions();
@@ -47,7 +48,8 @@ public class RallyToJiraEngine {
 					JsonObject project = rally.getProjectDetails(projectElement);
 					System.out.println(project);
 					// create project
-					JsonObject jiraProject = transform.transform(projectElement.getAsJsonObject(), ArtifactType.PROJECT);
+					JsonObject jiraProject = transform
+							.transform(projectElement.getAsJsonObject(), ArtifactType.PROJECT);
 					System.out.println(jiraProject);
 					jiraProject = jira.createProject(jiraProject);
 					JsonArray userStories = rally.getParentLevelUserStories(project);
@@ -55,7 +57,9 @@ public class RallyToJiraEngine {
 					for (JsonElement userStoryElement : userStories) {
 						System.out.println(userStoryElement);
 						// Create issue in JIRA
-						JsonObject jiraIssue = transform.transform(userStoryElement.getAsJsonObject(), ArtifactType.USER_STORY);
+						JsonObject jiraIssue = transform.transform(userStoryElement.getAsJsonObject(),
+								ArtifactType.USER_STORY);
+						System.out.println(jiraIssue);
 						jiraIssue = jira.createIssue(jiraIssue);
 						JsonArray defects = rally.getUserStoryDefects(userStoryElement);
 						System.out.println(defects);

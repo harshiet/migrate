@@ -75,9 +75,5 @@ public class SystemArtifact extends Persistable {
 		return attribute;
 	}
 
-	public void addAttributes(String... attributes) {
-		for (String attribute : attributes) {
-			addAttribute(attribute);
-		}
-	}
+	
 }

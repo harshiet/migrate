@@ -30,22 +30,31 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 		case PROJECT: {
 			return toProject(sourceObject);
 		}
+		case USER_STORY: {
+			return toUserStory(sourceObject);
+		}
 		default: {
 			return null;
 		}
 		}
 	}
 
+	private JsonObject toUserStory(JsonObject sourceObject) {
+		Map<String, String> map = new HashMap<String, String>();
+		JsonObject json = mapValues(sourceObject, map, ArtifactType.USER_STORY);
+		return json;
+	}
+
 	private JsonObject toProject(JsonObject sourceObject) {
 		String key = "PROJ";
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("key", key);
-		JsonObject json = mapValues(sourceObject, map);
+		JsonObject json = mapValues(sourceObject, map, ArtifactType.PROJECT);
 		return json;
 	}
 
-	private JsonObject mapValues(JsonObject sourceObject, Map<String, String> map) {
-		List<SystemArtifactAttribute> attributes = target.getArtifactofType(ArtifactType.PROJECT).getAttributes();
+	private JsonObject mapValues(JsonObject sourceObject, Map<String, String> map, ArtifactType artifactType) {
+		List<SystemArtifactAttribute> attributes = target.getArtifactofType(artifactType).getAttributes();
 		for (SystemArtifactAttribute attribute : attributes) {
 			SystemArtifactAttribute mappedAttribute = attribute.getAttributeMapping(source);
 			String attributeMapping = mappedAttribute.getName();
