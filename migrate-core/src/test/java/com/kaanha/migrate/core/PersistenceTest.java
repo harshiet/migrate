@@ -3,6 +3,8 @@ package com.kaanha.migrate.core;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.apache.commons.lang.StringUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -34,57 +37,66 @@ public class PersistenceTest {
 		em.getTransaction().begin();
 
 		SystemX systemRally = new SystemX("Rally", "Community");
-		SystemArtifact rallySubscription = systemRally.addArtifact(ArtifactType.SUBSCRIPTION, "subscription");
-		SystemArtifact rallyWorkspace = systemRally.addArtifact(ArtifactType.WORKSAPCE, "workspace");
-		SystemArtifact rallyProject = systemRally.addArtifact(ArtifactType.PROJECT, "project");
-		SystemArtifact rallyUserStory = systemRally.addArtifact(ArtifactType.USER_STORY, "HierarchicalRequirement");
-		rallySubscription.addAttribute("Workspaces");
-		rallyWorkspace.addAttribute("Projects");
-
-		SystemArtifactAttribute rallyProjectName = rallyProject.addAttribute("Name");
-		SystemArtifactAttribute rallyProjectOwner = rallyProject.addAttribute("Owner").withChildAttribute(
-				"_refObjectName");
-		rallyProject.addAttribute("objectid");
-		rallyProject.addAttribute("iterations");
-
-		rallyUserStory.addAttribute("attachments");
-		rallyUserStory.addAttribute("iteration");
-		rallyUserStory.addAttribute("tasks");
-		rallyUserStory.addAttribute("defects");
-
 		SystemX systemJira = new SystemX("Jira", "OnDemand");
-		SystemArtifact jiraProjectArtifact = systemJira.addArtifact(ArtifactType.PROJECT, "Project");
-		SystemArtifactAttribute jiraProjectName = jiraProjectArtifact.addAttribute("title");
-		SystemArtifactAttribute JiraProjectOwner = jiraProjectArtifact.addAttribute("admin");
 
-		rallyProjectName.addMapping(jiraProjectName);
-		rallyProjectOwner.addMapping(JiraProjectOwner);
+		addArtifactWithoutAttributeMappings(ArtifactType.SUBSCRIPTION, systemRally, "subscription",
+				Arrays.asList(new String[] { "Workspaces" }));
+		addArtifactWithoutAttributeMappings(ArtifactType.WORKSAPCE, systemRally, "workspace",
+				Arrays.asList(new String[] { "Projects" }));
+
+		Map<String, String> projectMappings = new HashMap<String, String>();
+		projectMappings.put("Name", "title");
+		projectMappings.put("Owner:_refObjectName", "admin");
+		addArtifactWithAttributeMappings(ArtifactType.PROJECT, systemRally, systemJira, "project", "Project",
+				projectMappings, Arrays.asList(new String[] { "objectid", "iterations" }), null);
+
+		addArtifactWithoutAttributeMappings(ArtifactType.USER_STORY, systemRally, "HierarchicalRequirement",
+				Arrays.asList(new String[] { "attachments", "iteration", "tasks", "defects" }));
 
 		em.persist(systemRally);
 		em.persist(systemJira);
 		em.getTransaction().commit();
 	}
 
+	private SystemArtifact addArtifactWithoutAttributeMappings(ArtifactType artifactType, SystemX system,
+			String artifactName, List<String> attributes) {
+		SystemArtifact artifact = system.addArtifact(artifactType, artifactName);
+		addAttributesToArtifact(artifact, attributes);
+		return artifact;
+
+	}
+
 	private void addArtifactWithAttributeMappings(ArtifactType artifactType, SystemX source, SystemX target,
 			String artifactNameSource, String artifactNameTarget, Map<String, String> attributeMappings,
 			List<String> unmappedSourceAttributes, List<String> unmappedTargetAttributes) {
-		SystemArtifact sourceArtifact = source.addArtifact(artifactType, artifactNameSource);
-		SystemArtifact targetArtifact = target.addArtifact(artifactType, artifactNameTarget);
 
-		for (String sourceAttributeName : attributeMappings.keySet()) {
-			String targetAttributeName = attributeMappings.get(sourceAttributeName);
-			SystemArtifactAttribute sourceAttribute = sourceArtifact.addAttribute(sourceAttributeName);
-			SystemArtifactAttribute targetAttribute = targetArtifact.addAttribute(targetAttributeName);
-			sourceAttribute.addMapping(targetAttribute);
+		SystemArtifact sourceArtifact = addArtifactWithoutAttributeMappings(artifactType, source, artifactNameSource,
+				unmappedSourceAttributes);
+		SystemArtifact targetArtifact = addArtifactWithoutAttributeMappings(artifactType, target, artifactNameTarget,
+				unmappedTargetAttributes);
+
+		if (attributeMappings != null) {
+			for (String sourceAttributeName : attributeMappings.keySet()) {
+				String sourceChildAttributeName = "";
+				if (sourceAttributeName.contains(":")) {
+					sourceChildAttributeName = sourceAttributeName.split(":")[1];
+					sourceAttributeName = sourceAttributeName.split(":")[0];
+				}
+				SystemArtifactAttribute sourceAttribute = sourceArtifact.addAttribute(sourceAttributeName);
+				if (StringUtils.isNotBlank(sourceChildAttributeName)) {
+					sourceAttribute.withChildAttribute(sourceChildAttributeName);
+				}
+				String targetAttributeName = attributeMappings.get(sourceAttributeName);
+				SystemArtifactAttribute targetAttribute = targetArtifact.addAttribute(targetAttributeName);
+				sourceAttribute.addMapping(targetAttribute);
+			}
 		}
-		addAttributesToArtifact(sourceArtifact, unmappedSourceAttributes);
-		addAttributesToArtifact(targetArtifact, unmappedTargetAttributes);
 	}
 
-	private void addAttributesToArtifact(SystemArtifact sourceArtifact, List<String> unmappedSourceAttributes) {
-		if (sourceArtifact != null && unmappedSourceAttributes != null) {
-			for (String attributeName : unmappedSourceAttributes) {
-				sourceArtifact.addAttribute(attributeName);
+	private void addAttributesToArtifact(SystemArtifact artifact, List<String> attributes) {
+		if (artifact != null && attributes != null) {
+			for (String attributeName : attributes) {
+				artifact.addAttribute(attributeName);
 			}
 		}
 	}
