@@ -53,6 +53,9 @@ public class PersistenceTest {
 		addArtifactWithoutAttributeMappings(ArtifactType.USER_STORY, systemRally, "HierarchicalRequirement",
 				Arrays.asList(new String[] { "attachments", "iteration", "tasks", "defects" }));
 
+		addArtifactWithoutAttributeMappings(ArtifactType.USER_STORY, systemJira, "Issue",
+				Arrays.asList(new String[] { "summary" }));
+
 		em.persist(systemRally);
 		em.persist(systemJira);
 		em.getTransaction().commit();

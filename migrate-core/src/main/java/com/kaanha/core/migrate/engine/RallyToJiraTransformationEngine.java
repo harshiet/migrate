@@ -57,23 +57,25 @@ public class RallyToJiraTransformationEngine extends TransformationEngine {
 		List<SystemArtifactAttribute> attributes = target.getArtifactofType(artifactType).getAttributes();
 		for (SystemArtifactAttribute attribute : attributes) {
 			SystemArtifactAttribute mappedAttribute = attribute.getAttributeMapping(source);
-			String attributeMapping = mappedAttribute.getName();
-			JsonElement attributeValue = sourceObject.get(attributeMapping);
+			if (mappedAttribute != null) {
+				String attributeMapping = mappedAttribute.getName();
+				JsonElement attributeValue = sourceObject.get(attributeMapping);
 
-			while (mappedAttribute.hasChild()) {
-				if (attributeValue == null) {
-					logger.warning("Null " + attributeMapping);
-					break;
+				while (mappedAttribute.hasChild()) {
+					if (attributeValue == null) {
+						logger.warning("Null " + attributeMapping);
+						break;
+					}
+					if (attributeValue.isJsonNull()) {
+						break;
+					}
+					mappedAttribute = mappedAttribute.getChildAttribute();
+					attributeMapping = mappedAttribute.getName();
+					attributeValue = attributeValue.getAsJsonObject().get(attributeMapping);
 				}
-				if (attributeValue.isJsonNull()) {
-					break;
+				if (attributeValue != null && StringUtils.isNotBlank(attributeValue.getAsString())) {
+					map.put(attribute.getName(), attributeValue.getAsString());
 				}
-				mappedAttribute = mappedAttribute.getChildAttribute();
-				attributeMapping = mappedAttribute.getName();
-				attributeValue = attributeValue.getAsJsonObject().get(attributeMapping);
-			}
-			if (attributeValue != null && StringUtils.isNotBlank(attributeValue.getAsString())) {
-				map.put(attribute.getName(), attributeValue.getAsString());
 			}
 		}
 
