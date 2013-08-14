@@ -50,11 +50,19 @@ public class PersistenceTest {
 		addArtifactWithAttributeMappings(ArtifactType.PROJECT, systemRally, systemJira, "project", "Project",
 				projectMappings, Arrays.asList(new String[] { "objectid", "iterations" }), null);
 
-		addArtifactWithoutAttributeMappings(ArtifactType.USER_STORY, systemRally, "HierarchicalRequirement",
-				Arrays.asList(new String[] { "attachments", "iteration", "tasks", "defects" }));
-
-		addArtifactWithoutAttributeMappings(ArtifactType.USER_STORY, systemJira, "Issue",
-				Arrays.asList(new String[] { "summary" }));
+	    Map<String, String> userStoryMappings = new HashMap<String, String>();
+		userStoryMappings.put("Name", "summary");
+		userStoryMappings.put("Description", "description");
+		userStoryMappings.put("Tags:_refObjectName", "labels");
+		addArtifactWithAttributeMappings(
+				ArtifactType.USER_STORY,
+				systemRally,
+				systemJira,
+				"HierarchicalRequirement",
+				"Issue",
+				userStoryMappings,
+				Arrays.asList(new String[] { "Owner.ObjectID", "ObjectID", "Parent", "Release", "Project", "ScheduleState", "Notes", "LastUpdateDate", "CreationDate", "Attachments", "TestCases",
+						"Iteration:Name" }), null);
 
 		em.persist(systemRally);
 		em.persist(systemJira);

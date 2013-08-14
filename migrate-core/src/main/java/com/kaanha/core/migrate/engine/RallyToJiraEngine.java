@@ -61,12 +61,12 @@ public class RallyToJiraEngine {
 								ArtifactType.USER_STORY);
 						System.out.println(jiraIssue);
 						jiraIssue = jira.createIssue(jiraIssue);
-						JsonArray defects = rally.getUserStoryDefects(userStoryElement);
-						System.out.println(defects);
-						JsonArray tasks = rally.getUserStoryTasks(userStoryElement);
-						System.out.println(tasks);
-						JsonArray attachments = rally.getUserStoryAttachments(userStoryElement);
-						System.out.println(attachments);
+//						JsonArray defects = rally.getUserStoryDefects(userStoryElement);
+//						System.out.println(defects);
+//						JsonArray tasks = rally.getUserStoryTasks(userStoryElement);
+//						System.out.println(tasks);
+//						JsonArray attachments = rally.getUserStoryAttachments(userStoryElement);
+//						System.out.println(attachments);
 					}
 
 				}
