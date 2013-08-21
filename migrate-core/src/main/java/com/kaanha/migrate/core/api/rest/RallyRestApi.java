@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.web.client.RestClientException;
 
 import com.google.gson.JsonArray;
@@ -23,7 +22,7 @@ import com.rallydev.rest.util.QueryFilter;
 
 public class RallyRestApi extends RestApi {
 
-	private ObjectMapper mapper = new ObjectMapper();
+	// private ObjectMapper mapper = new ObjectMapper();
 	private JsonParser jsonParser = new JsonParser();
 	private com.rallydev.rest.RallyRestApi api;
 	private DBRepository dbRepository;
@@ -134,6 +133,10 @@ public class RallyRestApi extends RestApi {
 
 	protected JsonArray getCollection(JsonElement obj, String collectionName) throws URISyntaxException {
 		return getObjectFromRef(obj.getAsJsonObject().get(collectionName).getAsJsonObject().get("_ref").getAsString()).getAsJsonObject("QueryResult").getAsJsonArray("Results");
+	}
+
+	protected JsonArray getArrayForAttibute(JsonObject object, String attribute) throws RestClientException, URISyntaxException {
+		return getObjectFromRef(object.get(attribute).getAsJsonObject().get("_ref").getAsString()).get("QueryResult").getAsJsonObject().get("Results").getAsJsonArray();
 	}
 
 }

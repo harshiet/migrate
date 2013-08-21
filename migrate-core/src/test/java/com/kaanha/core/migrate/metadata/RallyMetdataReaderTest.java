@@ -19,7 +19,8 @@ public class RallyMetdataReaderTest extends TestCase {
 			rallyMetadataReader = new RallyMetadataReader("https://rally1.rallydev.com/slm/webservice/v2.0/", "rally.user.2@gmail.com", "RallyUser123!");
 			JsonObject projectMetadata = rallyMetadataReader.readProjectMetadata();
 			assertEquals("Project", projectMetadata.get("name").getAsString());
-			assertTrue(projectMetadata.get("attributes").getAsJsonArray().size() > 0);
+			assertTrue(projectMetadata.get("primitives").getAsJsonArray().size() > 0);
+			System.out.println(projectMetadata);
 		} catch (URISyntaxException | IOException e) {
 			fail(e.getMessage());
 		}
