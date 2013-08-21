@@ -41,6 +41,7 @@ public class PersistenceTest {
 
 		addArtifactWithoutAttributeMappings(ArtifactType.SUBSCRIPTION, systemRally, "subscription",
 				Arrays.asList(new String[] { "Workspaces" }));
+		addArtifactWithoutAttributeMappings(ArtifactType.TYPE_DEFINITION, systemRally, "typedefinition", null);
 		addArtifactWithoutAttributeMappings(ArtifactType.WORKSAPCE, systemRally, "workspace",
 				Arrays.asList(new String[] { "Projects" }));
 
@@ -50,7 +51,7 @@ public class PersistenceTest {
 		addArtifactWithAttributeMappings(ArtifactType.PROJECT, systemRally, systemJira, "project", "Project",
 				projectMappings, Arrays.asList(new String[] { "objectid", "iterations" }), null);
 
-	    Map<String, String> userStoryMappings = new HashMap<String, String>();
+		Map<String, String> userStoryMappings = new HashMap<String, String>();
 		userStoryMappings.put("Name", "summary");
 		userStoryMappings.put("Description", "description");
 		userStoryMappings.put("Tags:_refObjectName", "labels");

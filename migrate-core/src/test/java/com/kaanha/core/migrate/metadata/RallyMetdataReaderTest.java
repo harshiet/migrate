@@ -1,4 +1,4 @@
-package com.kaanha.migrate.core.rest.client;
+package com.kaanha.core.migrate.metadata;
 
 import java.net.URISyntaxException;
 
@@ -9,7 +9,7 @@ import org.springframework.web.client.RestClientException;
 
 import com.kaanha.migrate.core.api.rest.RestApi;
 
-public class RestClientTest extends TestCase {
+public class RallyMetdataReaderTest extends TestCase {
 
 	@Test
 	public void testAuthentication() {

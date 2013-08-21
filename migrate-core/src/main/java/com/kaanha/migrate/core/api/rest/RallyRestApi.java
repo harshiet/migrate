@@ -3,6 +3,7 @@ package com.kaanha.migrate.core.api.rest;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +12,12 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.web.client.RestClientException;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.kaanha.migrate.core.persistence.api.DBRepository;
+import com.kaanha.migrate.core.persistence.domain.ArtifactType;
+import com.kaanha.migrate.core.persistence.domain.SystemX;
 import com.rallydev.rest.request.QueryRequest;
 import com.rallydev.rest.response.QueryResponse;
 import com.rallydev.rest.util.Fetch;
@@ -20,9 +25,11 @@ import com.rallydev.rest.util.QueryFilter;
 
 public class RallyRestApi extends RestApi {
 
-	ObjectMapper mapper = new ObjectMapper();
-	JsonParser jsonParser = new JsonParser();
-	com.rallydev.rest.RallyRestApi api;
+	private ObjectMapper mapper = new ObjectMapper();
+	private JsonParser jsonParser = new JsonParser();
+	private com.rallydev.rest.RallyRestApi api;
+	private DBRepository dbRepository;
+	private SystemX system;
 
 	protected RallyRestApi(String url, String username, String password) throws URISyntaxException {
 		super(username, password);
@@ -32,6 +39,8 @@ public class RallyRestApi extends RestApi {
 
 		}
 		api = new com.rallydev.rest.RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
+		dbRepository = DBRepository.getInstance();
+		system = this.dbRepository.findSystemByName("Rally");
 	}
 
 	//
@@ -76,8 +85,14 @@ public class RallyRestApi extends RestApi {
 	//
 	// }
 
-	protected JsonArray searchObjects(String objectCode, Map<String, String> filter,
-			List<String> dataElements) throws IOException {
+	// protected JsonArray searchObjects(ArtifactType artifactType, Map<String,
+	// String> filter,
+	// List<String> dataElements) throws IOException {
+	protected JsonArray searchObjects(ArtifactType artifactType, Map<String, String> filter) throws IOException {
+
+		String objectCode = system.getArtifactofType(ArtifactType.SUBSCRIPTION).getName();
+		List<String> dataElements = system.getArtifactofType(ArtifactType.SUBSCRIPTION).getAttributeNames();
+
 		QueryRequest request = new QueryRequest(objectCode);
 		request.setFetch(new Fetch(StringUtils.join(dataElements, ",")));
 		if (filter != null) {
@@ -99,4 +114,26 @@ public class RallyRestApi extends RestApi {
 		return queryResponse.getResults();
 
 	}
+
+	protected JsonArray searchObjects(ArtifactType artifactType) throws IOException {
+		return searchObjects(artifactType, null);
+	}
+
+	protected JsonObject getObjectFromRef(String ref) throws RestClientException, URISyntaxException {
+		return getObjectFromRef(ref, null);
+	}
+
+	protected JsonObject getObjectFromRef(String ref, ArtifactType artifactType) throws RestClientException, URISyntaxException {
+		List<String> dataElements = system.getArtifactofType(ArtifactType.PROJECT).getAttributeNames();
+		if (dataElements != null) {
+			ref = ref + "?fetch=" + StringUtils.join(dataElements, ",");
+		}
+		System.out.println(ref);
+		return findOne(ref);
+	}
+
+	protected JsonArray getCollection(JsonElement obj, String collectionName) throws URISyntaxException {
+		return getObjectFromRef(obj.getAsJsonObject().get(collectionName).getAsJsonObject().get("_ref").getAsString()).getAsJsonObject("QueryResult").getAsJsonArray("Results");
+	}
+
 }

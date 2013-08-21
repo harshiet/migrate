@@ -3,9 +3,6 @@ package com.kaanha.core.migrate.engine;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-
 import org.springframework.web.client.RestClientException;
 
 import com.google.gson.JsonArray;
@@ -23,8 +20,6 @@ public class RallyToJiraEngine {
 	RallyToJiraTransformationEngine transform;
 
 	public RallyToJiraEngine() {
-		EntityManager em = Persistence.createEntityManagerFactory("migrate").createEntityManager();
-		dbRepository = new DBRepository(em);
 		source = dbRepository.findSystemByName("Rally");
 		target = dbRepository.findSystemByName("Jira");
 		transform = new RallyToJiraTransformationEngine(source, target);
@@ -32,7 +27,7 @@ public class RallyToJiraEngine {
 
 	public void migrate() throws RestClientException, URISyntaxException, IOException {
 		RallyReadApi rally = new RallyReadApi("https://rally1.rallydev.com/slm/webservice/v2.0/",
-				"rally.user.2@gmail.com", "RallyUser123!", dbRepository);
+				"rally.user.2@gmail.com", "RallyUser123!");
 		JiraWriteApi jira = new JiraWriteApi("https://agiletool.executiveboard.com", "hagarwal", "1234");
 
 		JsonArray subscriptions = rally.getSubscriptions();
