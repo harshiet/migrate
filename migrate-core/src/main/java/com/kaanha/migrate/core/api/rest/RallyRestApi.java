@@ -20,12 +20,11 @@ import com.rallydev.rest.util.QueryFilter;
 
 public class RallyRestApi extends RestApi {
 
-	private RestApi rest;
 	ObjectMapper mapper = new ObjectMapper();
 	JsonParser jsonParser = new JsonParser();
 	com.rallydev.rest.RallyRestApi api;
 
-	public RallyRestApi(String url, String username, String password) throws URISyntaxException {
+	protected RallyRestApi(String url, String username, String password) throws URISyntaxException {
 		super(username, password);
 		try {
 			api.close();
@@ -53,8 +52,8 @@ public class RallyRestApi extends RestApi {
 	// throw new RestClientException("Could not parse response from: " + json);
 	// }
 
-	public JsonObject findOne(String ref) throws RestClientException, URISyntaxException {
-		String json = rest.get(ref);
+	protected JsonObject findOne(String ref) throws RestClientException, URISyntaxException {
+		String json = get(ref);
 		JsonObject jsonObject = jsonParser.parse(json).getAsJsonObject();
 		return jsonObject;
 	}
@@ -77,7 +76,7 @@ public class RallyRestApi extends RestApi {
 	//
 	// }
 
-	public JsonArray searchObjects(String objectCode, Map<String, String> filter,
+	protected JsonArray searchObjects(String objectCode, Map<String, String> filter,
 			List<String> dataElements) throws IOException {
 		QueryRequest request = new QueryRequest(objectCode);
 		request.setFetch(new Fetch(StringUtils.join(dataElements, ",")));
