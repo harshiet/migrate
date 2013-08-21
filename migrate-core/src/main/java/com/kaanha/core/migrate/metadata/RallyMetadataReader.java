@@ -23,6 +23,9 @@ public class RallyMetadataReader extends RallyRestApi {
 	public JsonObject readProjectMetadata() throws URISyntaxException, IOException {
 		return readMetadata("Project");
 	}
+	public JsonObject readUserStoryMetadata() throws URISyntaxException, IOException {
+		return readMetadata("Hierarchical Requirement");
+	}
 
 	private JsonObject readMetadata(String workspaceObjectName) throws IOException, RestClientException, URISyntaxException {
 
@@ -57,7 +60,6 @@ public class RallyMetadataReader extends RallyRestApi {
 					allowedValues.add(allowedValue);
 				}
 				attribute.add("allowedValues", allowedValues);
-
 			}
 			if (attributeType.equals("COLLECTION")) {
 				collectionAttributes.add(attribute);
@@ -68,7 +70,6 @@ public class RallyMetadataReader extends RallyRestApi {
 					primitiveAttributes.add(attribute);
 				}
 			}
-
 		}
 
 		// out.add("attributes", attributes);
