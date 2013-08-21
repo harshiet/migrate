@@ -1,4 +1,4 @@
-package com.kaanha.migrate.core.api.write;
+package com.kaanha.migrate.core.api.rest;
 
 import com.google.gson.JsonObject;
 

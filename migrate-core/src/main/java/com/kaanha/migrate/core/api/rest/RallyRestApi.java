@@ -1,4 +1,4 @@
-package com.kaanha.migrate.core.rest.client;
+package com.kaanha.migrate.core.api.rest;
 
 import java.io.IOException;
 import java.net.URI;
@@ -13,27 +13,26 @@ import org.springframework.web.client.RestClientException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.rallydev.rest.RallyRestApi;
 import com.rallydev.rest.request.QueryRequest;
 import com.rallydev.rest.response.QueryResponse;
 import com.rallydev.rest.util.Fetch;
 import com.rallydev.rest.util.QueryFilter;
 
-public class RallyRestClient {
+public class RallyRestApi extends RestApi {
 
-	private RestClient rest;
+	private RestApi rest;
 	ObjectMapper mapper = new ObjectMapper();
 	JsonParser jsonParser = new JsonParser();
-	RallyRestApi api;
+	com.rallydev.rest.RallyRestApi api;
 
-	public RallyRestClient(String url, String username, String password) throws URISyntaxException {
-		rest = RestClient.getRestClientAuthenticated(username, password);
+	public RallyRestApi(String url, String username, String password) throws URISyntaxException {
+		super(username, password);
 		try {
 			api.close();
 		} catch (Exception e) {
 
 		}
-		api = new RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
+		api = new com.rallydev.rest.RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
 	}
 
 	//

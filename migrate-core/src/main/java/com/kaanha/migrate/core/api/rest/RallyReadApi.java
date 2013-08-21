@@ -1,4 +1,4 @@
-package com.kaanha.migrate.core.api.read;
+package com.kaanha.migrate.core.api.rest;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -15,22 +15,20 @@ import com.google.gson.JsonObject;
 import com.kaanha.migrate.core.persistence.api.DBRepository;
 import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
-import com.kaanha.migrate.core.rest.client.RallyRestClient;
 
-public class RallyReadApi {
+public class RallyReadApi extends RallyRestApi {
 
 	private DBRepository dbRepository;
 	SystemX system;
-	RallyRestClient rallyRestClient;
 
 	public RallyReadApi(String url, String username, String password, DBRepository dbRepository) throws URISyntaxException {
+		super(url, username, password);
 		this.dbRepository = dbRepository;
-		rallyRestClient = new RallyRestClient(url, username, password);
 		system = this.dbRepository.findSystemByName("Rally");
 	}
 
 	public JsonArray getSubscriptions() throws RestClientException, URISyntaxException, IOException {
-		return rallyRestClient.searchObjects(system.getArtifactofType(ArtifactType.SUBSCRIPTION).getName(), null, system.getArtifactofType(ArtifactType.SUBSCRIPTION).getAttributeNames());
+		return searchObjects(system.getArtifactofType(ArtifactType.SUBSCRIPTION).getName(), null, system.getArtifactofType(ArtifactType.SUBSCRIPTION).getAttributeNames());
 	}
 
 	public JsonObject getObjectFromRef(String ref) throws RestClientException, URISyntaxException {
@@ -43,7 +41,7 @@ public class RallyReadApi {
 		Map<String, String> filter = new LinkedHashMap<String, String>();
 		filter.put("Project.ObjectID", project.get("ObjectID").getAsString());
 		filter.put("Parent", "null");
-		return rallyRestClient.searchObjects(objectType, filter, dataElements);
+		return searchObjects(objectType, filter, dataElements);
 	}
 
 	public JsonArray getWorkspaceProjects(JsonElement workspace) throws RestClientException, URISyntaxException {
@@ -55,7 +53,7 @@ public class RallyReadApi {
 			ref = ref + "?fetch=" + StringUtils.join(dataElements, ",");
 		}
 		System.out.println(ref);
-		return rallyRestClient.findOne(ref);
+		return findOne(ref);
 	}
 
 	public JsonObject getProjectDetails(JsonElement project) throws RestClientException, URISyntaxException {

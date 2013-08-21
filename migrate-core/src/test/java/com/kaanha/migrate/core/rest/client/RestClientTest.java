@@ -7,12 +7,14 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.springframework.web.client.RestClientException;
 
+import com.kaanha.migrate.core.api.rest.RestApi;
+
 public class RestClientTest extends TestCase {
 
 	@Test
 	public void testAuthentication() {
 
-		RestClient restClient = RestClient.getRestClientAuthenticated("rally.user.2@gmail.com", "RallyUser123!");
+		RestApi restClient = new RestApi("rally.user.2@gmail.com", "RallyUser123!");
 		try {
 			restClient.get("https://rally1.rallydev.com/slm/webservice/v2.0/project");
 		} catch (RestClientException e) {

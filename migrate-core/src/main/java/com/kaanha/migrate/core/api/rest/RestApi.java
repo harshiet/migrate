@@ -1,4 +1,4 @@
-package com.kaanha.migrate.core.rest.client;
+package com.kaanha.migrate.core.api.rest;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -12,15 +12,12 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-public class RestClient {
+public class RestApi {
 
 	private RestTemplate restTemplate;
 
-	private RestClient() {
+	public RestApi(String username, String password) {
 		restTemplate = new RestTemplate();
-	}
-
-	private RestClient(String username, String password) {
 		UsernamePasswordCredentials cred = new UsernamePasswordCredentials(username, password);
 		BasicCredentialsProvider cp = new BasicCredentialsProvider();
 		cp.setCredentials(AuthScope.ANY, cred);
@@ -29,16 +26,6 @@ public class RestClient {
 		ClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(client);
 
 		restTemplate = new RestTemplate(factory);
-	}
-
-	public static RestClient getRestClient() {
-		RestClient restClient = new RestClient();
-		return restClient;
-	}
-
-	public static RestClient getRestClientAuthenticated(String username, String password) {
-		RestClient restClient = new RestClient(username, password);
-		return restClient;
 	}
 
 	public String get(String url) throws RestClientException, URISyntaxException {

@@ -11,8 +11,8 @@ import org.springframework.web.client.RestClientException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.kaanha.migrate.core.api.read.RallyReadApi;
-import com.kaanha.migrate.core.api.write.JiraWriteApi;
+import com.kaanha.migrate.core.api.rest.JiraWriteApi;
+import com.kaanha.migrate.core.api.rest.RallyReadApi;
 import com.kaanha.migrate.core.persistence.api.DBRepository;
 import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
@@ -61,12 +61,15 @@ public class RallyToJiraEngine {
 								ArtifactType.USER_STORY);
 						System.out.println(jiraIssue);
 						jiraIssue = jira.createIssue(jiraIssue);
-//						JsonArray defects = rally.getUserStoryDefects(userStoryElement);
-//						System.out.println(defects);
-//						JsonArray tasks = rally.getUserStoryTasks(userStoryElement);
-//						System.out.println(tasks);
-//						JsonArray attachments = rally.getUserStoryAttachments(userStoryElement);
-//						System.out.println(attachments);
+						// JsonArray defects =
+						// rally.getUserStoryDefects(userStoryElement);
+						// System.out.println(defects);
+						// JsonArray tasks =
+						// rally.getUserStoryTasks(userStoryElement);
+						// System.out.println(tasks);
+						// JsonArray attachments =
+						// rally.getUserStoryAttachments(userStoryElement);
+						// System.out.println(attachments);
 					}
 
 				}
