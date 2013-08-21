@@ -20,7 +20,6 @@ public class RallyMetdataReaderTest extends TestCase {
 			JsonObject projectMetadata = rallyMetadataReader.readProjectMetadata();
 			assertEquals("Project", projectMetadata.get("name").getAsString());
 			assertTrue(projectMetadata.get("attributes").getAsJsonArray().size() > 0);
-			
 		} catch (URISyntaxException | IOException e) {
 			fail(e.getMessage());
 		}
