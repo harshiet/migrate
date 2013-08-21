@@ -3,7 +3,6 @@ package com.kaanha.migrate.core.api.rest;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +19,6 @@ import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
 import com.rallydev.rest.request.QueryRequest;
 import com.rallydev.rest.response.QueryResponse;
-import com.rallydev.rest.util.Fetch;
 import com.rallydev.rest.util.QueryFilter;
 
 public class RallyRestApi extends RestApi {
@@ -90,11 +88,13 @@ public class RallyRestApi extends RestApi {
 	// List<String> dataElements) throws IOException {
 	protected JsonArray searchObjects(ArtifactType artifactType, Map<String, String> filter) throws IOException {
 
-		String objectCode = system.getArtifactofType(ArtifactType.SUBSCRIPTION).getName();
-		List<String> dataElements = system.getArtifactofType(ArtifactType.SUBSCRIPTION).getAttributeNames();
+		String objectCode = system.getArtifactofType(artifactType).getName();
+		List<String> dataElements = system.getArtifactofType(artifactType).getAttributeNames();
 
 		QueryRequest request = new QueryRequest(objectCode);
-		request.setFetch(new Fetch(StringUtils.join(dataElements, ",")));
+		request.getFetch().add("true");
+		request.getFetch().addAll(dataElements);
+
 		if (filter != null) {
 			QueryFilter queryFilter = null;
 			for (String filterName : filter.keySet()) {
@@ -124,8 +124,8 @@ public class RallyRestApi extends RestApi {
 	}
 
 	protected JsonObject getObjectFromRef(String ref, ArtifactType artifactType) throws RestClientException, URISyntaxException {
-		List<String> dataElements = system.getArtifactofType(ArtifactType.PROJECT).getAttributeNames();
-		if (dataElements != null) {
+		if (artifactType != null) {
+			List<String> dataElements = system.getArtifactofType(artifactType).getAttributeNames();
 			ref = ref + "?fetch=" + StringUtils.join(dataElements, ",");
 		}
 		System.out.println(ref);
