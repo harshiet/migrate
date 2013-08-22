@@ -21,29 +21,33 @@ public class JIRAMetadataReader extends JiraRestApi {
 		JsonObject results = search("issue/createmeta");
 		JsonArray projects = results.get("projects").getAsJsonArray();
 		if (projects.size() == 0) {
-			out.addProperty("name", "Project");
-			out.addProperty("displayName", "Project");
-			JsonArray primitives = new JsonArray();
-			JsonObject name = new JsonObject();
-			name.addProperty("id", "Name");
-			name.addProperty("name", "name");
-			name.addProperty("type", "STRING");
-			primitives.add(name);
-			JsonObject key = new JsonObject();
-			key.addProperty("id", "Key");
-			key.addProperty("name", "key");
-			key.addProperty("type", "STRING");
-			primitives.add(key);
-			JsonObject description = new JsonObject();
-			description.addProperty("id", "Description");
-			description.addProperty("name", "desc");
-			description.addProperty("type", "STRING");
-			primitives.add(description);
-			out.add("primitives", primitives);
+			createProjectMetdata(out);
 		}else{
-			
+			createProjectMetdata(out);
 		}
 		return out;
+	}
+
+	private void createProjectMetdata(JsonObject out) {
+		out.addProperty("name", "Project");
+		out.addProperty("displayName", "Project");
+		JsonArray primitives = new JsonArray();
+		JsonObject name = new JsonObject();
+		name.addProperty("id", "Name");
+		name.addProperty("name", "name");
+		name.addProperty("type", "STRING");
+		primitives.add(name);
+		JsonObject key = new JsonObject();
+		key.addProperty("id", "Key");
+		key.addProperty("name", "key");
+		key.addProperty("type", "STRING");
+		primitives.add(key);
+		JsonObject description = new JsonObject();
+		description.addProperty("id", "Description");
+		description.addProperty("name", "desc");
+		description.addProperty("type", "STRING");
+		primitives.add(description);
+		out.add("primitives", primitives);
 	}
 
 	public JsonObject readUserStoryMetadata() throws URISyntaxException, IOException {
