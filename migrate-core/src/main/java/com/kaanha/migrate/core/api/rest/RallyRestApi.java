@@ -134,9 +134,4 @@ public class RallyRestApi extends RestApi {
 	protected JsonArray getCollection(JsonElement obj, String collectionName) throws URISyntaxException {
 		return getObjectFromRef(obj.getAsJsonObject().get(collectionName).getAsJsonObject().get("_ref").getAsString()).getAsJsonObject("QueryResult").getAsJsonArray("Results");
 	}
-
-	protected JsonArray getArrayForAttibute(JsonObject object, String attribute) throws RestClientException, URISyntaxException {
-		return getObjectFromRef(object.get(attribute).getAsJsonObject().get("_ref").getAsString()).get("QueryResult").getAsJsonObject().get("Results").getAsJsonArray();
-	}
-
 }

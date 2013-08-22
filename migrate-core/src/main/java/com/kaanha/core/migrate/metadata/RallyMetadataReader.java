@@ -23,6 +23,7 @@ public class RallyMetadataReader extends RallyRestApi {
 	public JsonObject readProjectMetadata() throws URISyntaxException, IOException {
 		return readMetadata("Project");
 	}
+
 	public JsonObject readUserStoryMetadata() throws URISyntaxException, IOException {
 		return readMetadata("Hierarchical Requirement");
 	}
@@ -33,7 +34,7 @@ public class RallyMetadataReader extends RallyRestApi {
 		filter.put("Name", workspaceObjectName);
 		JsonArray metadataResults = searchObjects(ArtifactType.TYPE_DEFINITION, filter);
 		JsonObject metadata = metadataResults.get(0).getAsJsonObject();
-		JsonArray arrAttributes = getArrayForAttibute(metadata, "Attributes");
+		JsonArray arrAttributes = getCollection(metadata, "Attributes");
 		JsonObject out = new JsonObject();
 		out.addProperty("name", metadata.get("_refObjectName").getAsString());
 		out.addProperty("displayName", metadata.get("DisplayName").getAsString());
@@ -52,7 +53,7 @@ public class RallyMetadataReader extends RallyRestApi {
 			int countOfAllowedValues = objAttribute.get("AllowedValues").getAsJsonObject().get("Count").getAsInt();
 			if (countOfAllowedValues > 0) {
 				JsonArray allowedValues = new JsonArray();
-				JsonArray arrAllowedValues = getArrayForAttibute(objAttribute, "AllowedValues");
+				JsonArray arrAllowedValues = getCollection(objAttribute, "AllowedValues");
 				for (JsonElement eleAllowedValue : arrAllowedValues) {
 					String strAllowedValue = eleAllowedValue.getAsJsonObject().get("StringValue").getAsString();
 					JsonObject allowedValue = new JsonObject();
