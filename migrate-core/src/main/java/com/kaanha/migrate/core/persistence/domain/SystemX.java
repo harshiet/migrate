@@ -1,11 +1,14 @@
 package com.kaanha.migrate.core.persistence.domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -20,8 +23,9 @@ public class SystemX extends Persistable {
 	@Column(columnDefinition = "TEXT")
 	String version;
 
-	@OneToMany(mappedBy = "system", cascade = CascadeType.ALL, orphanRemoval = true)
-	List<SystemArtifact> artifacts = new ArrayList<SystemArtifact>();
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "SYSTEM_ID", referencedColumnName = "ID")
+	List<SystemAttribute> attributes = new ArrayList<SystemAttribute>();
 
 	public SystemX() {
 		super();
@@ -49,57 +53,23 @@ public class SystemX extends Persistable {
 		this.version = version;
 	}
 
-	public List<SystemArtifact> getArtifacts() {
-		return artifacts;
+	public void addAttribute(ArtifactType artifact, AttributeType attribute, String name) {
+		if (artifact != null) {
+			attributes.add(new SystemAttribute(artifact, attribute, name));
+		}
 	}
 
-	public SystemArtifact addArtifact(ArtifactType artifact, String name) {
-		SystemArtifact systemArtifact = new SystemArtifact();
-		systemArtifact.setArtifactType(artifact);
-		systemArtifact.setName(name);
-		systemArtifact.setSystem(this);
-		artifacts.add(systemArtifact);
-		return systemArtifact;
+	public List<SystemAttribute> getAttributes() {
+		return attributes;
 	}
 
-	public SystemArtifact getArtifactofType(ArtifactType artifactType) {
-		for (SystemArtifact systemArtifact : getArtifacts()) {
-			if (systemArtifact.getArtifactType().equals(artifactType)) {
-				return systemArtifact;
+	public Map<AttributeType, String> getAttributesFor(ArtifactType artifactType) {
+		Map<AttributeType, String> attributesMap = new HashMap<AttributeType, String>();
+		for(SystemAttribute attribute : attributes){
+			if(attribute.getArtifact().equals(artifactType)){
+				attributesMap.put(attribute.getAttribute(), attribute.getName());
 			}
 		}
 		return null;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((version == null) ? 0 : version.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		SystemX other = (SystemX) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (version == null) {
-			if (other.version != null)
-				return false;
-		} else if (!version.equals(other.version))
-			return false;
-		return true;
-	}
-
 }

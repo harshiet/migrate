@@ -3,6 +3,7 @@ package com.kaanha.migrate.core.api.rest;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.kaanha.migrate.core.persistence.api.DBRepository;
 import com.kaanha.migrate.core.persistence.domain.ArtifactType;
+import com.kaanha.migrate.core.persistence.domain.AttributeType;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
 import com.rallydev.rest.request.QueryRequest;
 import com.rallydev.rest.response.QueryResponse;
@@ -87,8 +89,9 @@ public class RallyRestApi extends RestApi {
 	// List<String> dataElements) throws IOException {
 	protected JsonArray searchObjects(ArtifactType artifactType, Map<String, String> filter) throws IOException {
 
-		String objectCode = system.getArtifactofType(artifactType).getName();
-		List<String> dataElements = system.getArtifactofType(artifactType).getAttributeNames();
+		Map<AttributeType, String> attributesMap = system.getAttributesFor(artifactType);
+		String objectCode = attributesMap.get(AttributeType.NAME);
+		Collection<String> dataElements = attributesMap.values();
 
 		QueryRequest request = new QueryRequest(objectCode);
 		request.getFetch().add("true");
@@ -124,7 +127,7 @@ public class RallyRestApi extends RestApi {
 
 	protected JsonObject getObjectFromRef(String ref, ArtifactType artifactType) throws RestClientException, URISyntaxException {
 		if (artifactType != null) {
-			List<String> dataElements = system.getArtifactofType(artifactType).getAttributeNames();
+			Collection<String> dataElements = system.getAttributesFor(artifactType).values();
 			ref = ref + "?fetch=" + StringUtils.join(dataElements, ",");
 		}
 		System.out.println(ref);
