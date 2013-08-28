@@ -15,11 +15,12 @@ import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 import com.kaanha.migrate.core.persistence.domain.SystemX;
 
 public class RallyToJiraEngine {
-	DBRepository dbRepository;
+
 	SystemX source, target;
 	RallyToJiraTransformationEngine transform;
 
 	public RallyToJiraEngine() {
+		DBRepository dbRepository = DBRepository.getInstance();
 		source = dbRepository.findSystemByName("Rally");
 		target = dbRepository.findSystemByName("Jira");
 		transform = new RallyToJiraTransformationEngine(source, target);
@@ -43,8 +44,7 @@ public class RallyToJiraEngine {
 					JsonObject project = rally.getProjectDetails(projectElement);
 					System.out.println(project);
 					// create project
-					JsonObject jiraProject = transform
-							.transform(projectElement.getAsJsonObject(), ArtifactType.PROJECT);
+					JsonObject jiraProject = transform.transform(project, ArtifactType.PROJECT);
 					System.out.println(jiraProject);
 					jiraProject = jira.createProject(jiraProject);
 					JsonArray userStories = rally.getParentLevelUserStories(project);

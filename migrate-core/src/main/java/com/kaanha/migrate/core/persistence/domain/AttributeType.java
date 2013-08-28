@@ -1,5 +1,5 @@
 package com.kaanha.migrate.core.persistence.domain;
 
 public enum AttributeType {
-	NAME, DESCRIPTION
+	NAME, DESCRIPTION, UNMAPPED, DISPLAY_NAME
 }

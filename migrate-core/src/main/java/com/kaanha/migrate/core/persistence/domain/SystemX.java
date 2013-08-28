@@ -70,6 +70,6 @@ public class SystemX extends Persistable {
 				attributesMap.put(attribute.getAttribute(), attribute.getName());
 			}
 		}
-		return null;
+		return attributesMap;
 	}
 }

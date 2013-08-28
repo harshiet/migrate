@@ -19,7 +19,7 @@ public class RallyReadApi extends RallyRestApi {
 	}
 
 	public JsonArray getSubscriptions() throws RestClientException, URISyntaxException, IOException {
-		return searchObjects(ArtifactType.SUBSCRIPTION.SUBSCRIPTION);
+		return searchObjects(ArtifactType.SUBSCRIPTION);
 	}
 
 	public JsonArray getParentLevelUserStories(JsonObject project) throws IOException {

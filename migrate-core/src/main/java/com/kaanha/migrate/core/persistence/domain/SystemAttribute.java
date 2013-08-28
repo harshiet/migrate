@@ -19,8 +19,11 @@ public class SystemAttribute extends Persistable {
 	@Column(columnDefinition = "TEXT")
 	String name;
 
+	public SystemAttribute() {
+	}
+
 	public SystemAttribute(ArtifactType artifact, AttributeType attribute, String name) {
-		super();
+
 		this.artifact = artifact;
 		this.attribute = attribute;
 		this.name = name;

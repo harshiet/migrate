@@ -33,12 +33,23 @@ public class PersistenceTest {
 		em.getTransaction().begin();
 
 		SystemX systemRally = new SystemX("Rally", "Community");
-		// SystemX systemJira = new SystemX("Jira", "OnDemand");
+		systemRally.addAttribute(ArtifactType.SUBSCRIPTION, AttributeType.NAME, "Subscription");
+		systemRally.addAttribute(ArtifactType.SUBSCRIPTION, AttributeType.UNMAPPED, "Workspaces");
+		systemRally.addAttribute(ArtifactType.WORKSAPCE, AttributeType.NAME, "Workspace");
+		systemRally.addAttribute(ArtifactType.PROJECT, AttributeType.NAME, "name");
+		systemRally.addAttribute(ArtifactType.PROJECT, AttributeType.DESCRIPTION, "description");
+		systemRally.addAttribute(ArtifactType.PROJECT, AttributeType.UNMAPPED, "ObjectID");
+		systemRally.addAttribute(ArtifactType.USER_STORY, AttributeType.NAME, "hierarchicalrequirement");
+		systemRally.addAttribute(ArtifactType.TYPE_DEFINITION, AttributeType.NAME, "typedefinition");
+		systemRally.addAttribute(ArtifactType.TYPE_DEFINITION, AttributeType.UNMAPPED, "Attributes");
+		systemRally.addAttribute(ArtifactType.TYPE_DEFINITION, AttributeType.DISPLAY_NAME, "DisplayName");
 
-		systemRally.addAttribute(ArtifactType.SUBSCRIPTION, AttributeType.NAME,"Subscription");
+		SystemX systemJira = new SystemX("Jira", "OnDemand");
+		systemRally.addAttribute(ArtifactType.PROJECT, AttributeType.NAME, "title");
+		systemRally.addAttribute(ArtifactType.PROJECT, AttributeType.DESCRIPTION, "desc");
 
 		em.persist(systemRally);
-		// em.persist(systemJira);
+		em.persist(systemJira);
 		em.getTransaction().commit();
 	}
 

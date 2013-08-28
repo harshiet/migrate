@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -27,7 +26,7 @@ public class RallyRestApi extends RestApi {
 	// private ObjectMapper mapper = new ObjectMapper();
 	private JsonParser jsonParser = new JsonParser();
 	private com.rallydev.rest.RallyRestApi api;
-	private DBRepository dbRepository;
+
 	private SystemX system;
 
 	protected RallyRestApi(String url, String username, String password) throws URISyntaxException {
@@ -38,8 +37,8 @@ public class RallyRestApi extends RestApi {
 
 		}
 		api = new com.rallydev.rest.RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
-		dbRepository = DBRepository.getInstance();
-		system = this.dbRepository.findSystemByName("Rally");
+		DBRepository dbRepository = DBRepository.getInstance();
+		system = dbRepository.findSystemByName("Rally");
 	}
 
 	//
