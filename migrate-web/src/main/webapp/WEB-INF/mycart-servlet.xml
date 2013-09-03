@@ -71,7 +71,7 @@
 	
 	<!-- This creates an XmlFlowRegistryFactory bean -->
 	<flow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices">
-		<flow:flow-location path="/WEB-INF/flows/addToCart.xml"/>
+		<flow:flow-location path="/WEB-INF/flows/home.xml"/>
 		<flow:flow-location path="/WEB-INF/flows/checkout.xml"/>
 		<flow:flow-location path="/WEB-INF/flows/login.xml"/>
 		<flow:flow-location path="/WEB-INF/flows/register.xml"/>
@@ -85,6 +85,10 @@
 				<ref bean="viewResolver"/>
 			</list>
 		</property>
+	</bean>
+	<bean id="migrationRequest" class="com.kannha.migrate.web.controller.MigrationRequest" scope="session">
+		<!-- This requires CGLIB -->
+		<aop:scoped-proxy/>
 	</bean>
 
 </beans>

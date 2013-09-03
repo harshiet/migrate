@@ -8,7 +8,8 @@
 <title>Migrate</title>
 </head>
 <body>
-	<form:form commandName="form" action="${flowExecutionUrl}" method="post">
+${migrationRequest}
+	<%--<form:form commandName="form" action="${flowExecutionUrl}" method="post">
 		<table>
 			<tr>
 				<td></td>
@@ -31,7 +32,7 @@
 				<td><form:password path="targetPassword" showPassword="true" /></td>
 			</tr>
 		</table>
-		<input type="submit" value="login" name="_eventId_login"/>
-	</form:form>
+		<input type="submit" value="login" name="_eventId_validateConnection"/>
+	</form:form>--%>
 </body>
 </html>
