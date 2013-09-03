@@ -2,6 +2,6 @@
 
 <decorators>
     <decorator name="main" page="/WEB-INF/jsp/pagetemplate.jsp">
-        <pattern>/*</pattern>
+        <pattern>/xyz*</pattern>
     </decorator>
 </decorators>

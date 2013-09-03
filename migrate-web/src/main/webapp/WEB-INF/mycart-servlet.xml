@@ -36,7 +36,7 @@
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<value>
-				/addToCart.do=flowController
+				/home.do=flowController
 				/checkout.do=flowController
 				/account/login.do=flowController
 				/account/register.do=flowController
@@ -87,22 +87,4 @@
 		</property>
 	</bean>
 
-
-	<!-- ================================================================== -->
-	<!-- Other beans                                                        -->
-	<!-- ================================================================== -->
-	
-	<!-- Autowired into CartServiceImpl -->
-	<!-- Create a proxy to generate session-scoped shopping carts -->
-	<bean id="shoppingCart" class="mycart.ShoppingCart" scope="session">
-		<!-- This requires CGLIB -->
-		<aop:scoped-proxy/>
-	</bean>
-	
-	<!-- Autowired into CartServiceImpl -->
-	<util:list id="shippingOptions">
-		<value>Standard Shipping (1 week) - Free</value>
-		<value>Expedited Shipping (3 days) - $19.95</value>
-		<value>Overnight Shipping - $59.95</value>
-	</util:list>
 </beans>
