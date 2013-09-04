@@ -4,21 +4,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
 		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
-	<on-start>
-		<set name="requestScope.form" value="migrationRequest"/>
-	</on-start>
-	<view-state id="home" view="home">
-		<!-- cart is available to SWF but not stored on the session under that name when using AOP proxy -->
-		<transition on="validateConnection" to="validateConnection"/>
+
+	<view-state id="home" view="home" model="migrationRequest">
+		<transition on="submit" to="connect" />
 	</view-state>
-	<!-- If not specified, the start state is the first state specified. -->
-	<action-state id="validateConnection">
-	
-		<!-- action-state must have an evaluate element, a set element, or similar.  See the XSD. -->
-		<evaluate expression="migrationService.valiateConnection(form)"/>
-		
-		<transition to="connectionValidated"/>
+	<action-state id="connect">
+		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
+		<transition on="success" to="fetchSourceFields" />
+		<transition on="no" to="home" />
 	</action-state>
-	
-	<end-state id="connectionValidated" view="externalRedirect:contextRelative:/homes.do"/>
+	<action-state id="fetchSourceFields">
+		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
+		<transition on="success" to="fetchTargetFields" />
+		<transition on="no" to="home" />
+	</action-state>
+	<end-state id="fetchTargetFields" view="externalRedirect:contextRelative:/homes.do" />
 </flow>

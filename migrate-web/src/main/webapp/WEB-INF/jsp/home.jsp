@@ -1,3 +1,5 @@
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.util.Map"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -8,8 +10,24 @@
 <title>Migrate</title>
 </head>
 <body>
-${migrationRequest}
-	<%--<form:form commandName="form" action="${flowExecutionUrl}" method="post">
+	<%
+		/*Enumeration parameterList = request.getAttributeNames();
+		while (parameterList.hasMoreElements()){
+			String sName = parameterList.nextElement().toString();
+			Object value = request.getAttribute(sName);
+			// if a paramater contains multiple values, print all of them
+			out.println(sName + " = " + value + "<br>");
+		}
+		out.println("*************************************************************<br>");
+		parameterList = session.getAttributeNames();
+		while (parameterList.hasMoreElements()){
+			String sName = parameterList.nextElement().toString();
+			Object value = session.getAttribute(sName);
+			// if a paramater contains multiple values, print all of them
+			out.println(sName + " = " + value + "<br>");
+		}*/
+	%>
+	<form:form commandName="migrationRequest" action="${flowExecutionUrl}" method="post">
 		<table>
 			<tr>
 				<td></td>
@@ -32,7 +50,7 @@ ${migrationRequest}
 				<td><form:password path="targetPassword" showPassword="true" /></td>
 			</tr>
 		</table>
-		<input type="submit" value="login" name="_eventId_validateConnection"/>
-	</form:form>--%>
+		<input type="submit" value="login" name="_eventId_submit"/>
+	</form:form>
 </body>
 </html>

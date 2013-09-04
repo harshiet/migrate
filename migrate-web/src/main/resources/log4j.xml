@@ -17,7 +17,7 @@
 		<level value="debug" />
 	</logger>
 	<logger name="org.springframework">
-		<level value="debug" />
+		<level value="INFO" />
 	</logger>
 	<root>
 		<priority value="debug" />

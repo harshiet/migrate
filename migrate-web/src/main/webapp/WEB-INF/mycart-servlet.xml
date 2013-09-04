@@ -86,9 +86,6 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="migrationRequest" class="com.kannha.migrate.web.controller.MigrationRequest" scope="session">
-		<!-- This requires CGLIB -->
-		<aop:scoped-proxy/>
-	</bean>
+	<bean id="migrationRequest" class="com.kannha.migrate.web.controller.MigrationRequest" scope="session"/>
 
 </beans>
