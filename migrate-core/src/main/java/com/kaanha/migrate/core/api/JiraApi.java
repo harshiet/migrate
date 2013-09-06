@@ -14,7 +14,7 @@ import org.swift.common.soap.jira.RemoteException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class JiraRestApi extends RestApi {
+public class JiraApi extends RestApi {
 
 	private String url;
 	private JsonParser jsonParser = new JsonParser();
@@ -22,7 +22,7 @@ public class JiraRestApi extends RestApi {
 	private JiraSoapService jiraSoapService = null;
 	private String fToken = null;
 
-	public JiraRestApi(String url, String username, String password)
+	public JiraApi(String url, String username, String password)
 			throws RestClientException, URISyntaxException, ServiceException, RemoteAuthenticationException, RemoteException, java.rmi.RemoteException {
 		super(username, password);
 		this.url = url + "/rest/api/latest/";
@@ -34,7 +34,7 @@ public class JiraRestApi extends RestApi {
 		fToken = jiraSoapService.login(username, password);
 	}
 
-	protected JsonObject search(String ref) throws RestClientException,
+	public JsonObject search(String ref) throws RestClientException,
 			URISyntaxException {
 		if (!ref.contains("://")) {
 			ref = url + ref;

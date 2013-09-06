@@ -8,6 +8,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import com.google.gson.JsonObject;
+import com.kaanha.migrate.core.api.RallyApi;
 
 public class RallyMetdataReaderTest extends TestCase {
 
@@ -16,7 +17,9 @@ public class RallyMetdataReaderTest extends TestCase {
 
 		RallyMetadataReader rallyMetadataReader;
 		try {
-			rallyMetadataReader = new RallyMetadataReader("https://rally1.rallydev.com/slm/webservice/v2.0/", "rally.user.2@gmail.com", "RallyUser123!");
+			rallyMetadataReader = new RallyMetadataReader(new RallyApi(
+					"https://rally1.rallydev.com/slm/webservice/v2.0/",
+					"rally.user.2@gmail.com", "RallyUser123!"));
 			JsonObject metadata = rallyMetadataReader.readProjectMetadata();
 			assertEquals("Project", metadata.get("name").getAsString());
 			assertTrue(metadata.get("primitives").getAsJsonArray().size() > 0);
@@ -27,14 +30,18 @@ public class RallyMetdataReaderTest extends TestCase {
 		}
 
 	}
+
 	@Test
 	public void testReadUserStoryMetadata() {
 
 		RallyMetadataReader rallyMetadataReader;
 		try {
-			rallyMetadataReader = new RallyMetadataReader("https://rally1.rallydev.com/slm/webservice/v2.0/", "rally.user.2@gmail.com", "RallyUser123!");
+			rallyMetadataReader = new RallyMetadataReader(new RallyApi(
+					"https://rally1.rallydev.com/slm/webservice/v2.0/",
+					"rally.user.2@gmail.com", "RallyUser123!"));
 			JsonObject metadata = rallyMetadataReader.readUserStoryMetadata();
-			assertEquals("Hierarchical Requirement", metadata.get("name").getAsString());
+			assertEquals("Hierarchical Requirement", metadata.get("name")
+					.getAsString());
 			assertTrue(metadata.get("primitives").getAsJsonArray().size() > 0);
 			System.out.println(metadata);
 		} catch (URISyntaxException | IOException e) {

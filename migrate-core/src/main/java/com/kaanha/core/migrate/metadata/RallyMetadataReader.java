@@ -10,34 +10,40 @@ import org.springframework.web.client.RestClientException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.kaanha.migrate.core.api.RallyRestApi;
+import com.kaanha.migrate.core.api.RallyApi;
 import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 
-public class RallyMetadataReader extends RallyRestApi {
+public class RallyMetadataReader {
+	private RallyApi rally;
 
-	public RallyMetadataReader(String url, String username, String password) throws URISyntaxException, IOException {
-		super(url, username, password);
+	public RallyMetadataReader(RallyApi rally) {
+		this.rally = rally;
 
 	}
 
-	public JsonObject readProjectMetadata() throws URISyntaxException, IOException {
+	public JsonObject readProjectMetadata() throws URISyntaxException,
+			IOException {
 		return readMetadata("Project");
 	}
 
-	public JsonObject readUserStoryMetadata() throws URISyntaxException, IOException {
+	public JsonObject readUserStoryMetadata() throws URISyntaxException,
+			IOException {
 		return readMetadata("Hierarchical Requirement");
 	}
 
-	private JsonObject readMetadata(String workspaceObjectName) throws IOException, RestClientException, URISyntaxException {
+	private JsonObject readMetadata(String workspaceObjectName)
+			throws IOException, RestClientException, URISyntaxException {
 
 		Map<String, String> filter = new HashMap<String, String>();
 		filter.put("Name", workspaceObjectName);
-		JsonArray metadataResults = searchObjects(ArtifactType.TYPE_DEFINITION, filter);
+		JsonArray metadataResults = rally.searchObjects(ArtifactType.TYPE_DEFINITION,
+				filter);
 		JsonObject metadata = metadataResults.get(0).getAsJsonObject();
-		JsonArray arrAttributes = getCollection(metadata, "Attributes");
+		JsonArray arrAttributes = rally.getCollection(metadata, "Attributes");
 		JsonObject out = new JsonObject();
 		out.addProperty("name", metadata.get("_refObjectName").getAsString());
-		out.addProperty("displayName", metadata.get("DisplayName").getAsString());
+		out.addProperty("displayName", metadata.get("DisplayName")
+				.getAsString());
 		// JsonArray attributes = new JsonArray();
 		JsonArray primitiveAttributes = new JsonArray();
 		JsonArray collectionAttributes = new JsonArray();
@@ -46,16 +52,22 @@ public class RallyMetadataReader extends RallyRestApi {
 		for (JsonElement eleAttribute : arrAttributes) {
 			JsonObject objAttribute = eleAttribute.getAsJsonObject();
 			JsonObject attribute = new JsonObject();
-			attribute.addProperty("id", objAttribute.get("ElementName").getAsString());
-			attribute.addProperty("name", objAttribute.get("Name").getAsString());
-			String attributeType = objAttribute.get("AttributeType").getAsString();
+			attribute.addProperty("id", objAttribute.get("ElementName")
+					.getAsString());
+			attribute.addProperty("name", objAttribute.get("Name")
+					.getAsString());
+			String attributeType = objAttribute.get("AttributeType")
+					.getAsString();
 			attribute.addProperty("type", attributeType);
-			int countOfAllowedValues = objAttribute.get("AllowedValues").getAsJsonObject().get("Count").getAsInt();
+			int countOfAllowedValues = objAttribute.get("AllowedValues")
+					.getAsJsonObject().get("Count").getAsInt();
 			if (countOfAllowedValues > 0) {
 				JsonArray allowedValues = new JsonArray();
-				JsonArray arrAllowedValues = getCollection(objAttribute, "AllowedValues");
+				JsonArray arrAllowedValues = rally.getCollection(objAttribute,
+						"AllowedValues");
 				for (JsonElement eleAllowedValue : arrAllowedValues) {
-					String strAllowedValue = eleAllowedValue.getAsJsonObject().get("StringValue").getAsString();
+					String strAllowedValue = eleAllowedValue.getAsJsonObject()
+							.get("StringValue").getAsString();
 					JsonObject allowedValue = new JsonObject();
 					allowedValue.addProperty("value", strAllowedValue);
 					allowedValues.add(allowedValue);

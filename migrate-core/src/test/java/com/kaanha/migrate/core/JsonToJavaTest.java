@@ -22,12 +22,12 @@ import com.googlecode.jsonschema2pojo.SchemaMapper;
 import com.googlecode.jsonschema2pojo.SchemaStore;
 import com.googlecode.jsonschema2pojo.SourceType;
 import com.googlecode.jsonschema2pojo.rules.RuleFactory;
-import com.kaanha.migrate.core.api.RallyRestApi;
+import com.kaanha.migrate.core.api.RallyApi;
 import com.kaanha.migrate.core.api.RestApi;
 import com.sun.codemodel.JCodeModel;
 
 public class JsonToJavaTest {
-	static RallyRestApi rally;
+	static RallyApi rally;
 	static RestApi rest;
 	static String username = "rally.user.2@gmail.com";
 	static String password = "RallyUser123!";

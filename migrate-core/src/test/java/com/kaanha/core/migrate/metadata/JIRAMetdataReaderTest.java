@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.springframework.web.client.RestClientException;
 
 import com.google.gson.JsonObject;
+import com.kaanha.migrate.core.api.JiraApi;
 
 public class JIRAMetdataReaderTest extends TestCase {
 
@@ -19,9 +20,8 @@ public class JIRAMetdataReaderTest extends TestCase {
 
 		JIRAMetadataReader jiraMetadataReader;
 		try {
-			jiraMetadataReader = new JIRAMetadataReader(
-					"https://kaanha.atlassian.net", "admin",
-					"admin123");
+			jiraMetadataReader = new JIRAMetadataReader(new JiraApi(
+					"https://kaanha.atlassian.net", "admin", "admin123"));
 			JsonObject metadata = jiraMetadataReader.readProjectMetadata();
 			System.out.println(metadata);
 		} catch (RestClientException | URISyntaxException | IOException e) {

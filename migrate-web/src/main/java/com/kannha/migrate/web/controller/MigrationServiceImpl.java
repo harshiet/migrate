@@ -22,6 +22,7 @@ public class MigrationServiceImpl implements MigrationService {
 	public void connectSource(MigrationRequest migrationRequest) throws URISyntaxException, IOException {
 		logger.debug("connectSource");
 		RallyReadApi rallyReadApi = new RallyReadApi(migrationRequest.getSourceUrl(), migrationRequest.getSourceUsername(), migrationRequest.getSourcePassword());
+		
 	}
 
 	public void connectTarget(MigrationRequest migrationRequest) throws URISyntaxException, RemoteAuthenticationException, RemoteException, RestClientException, java.rmi.RemoteException, ServiceException {

@@ -3,30 +3,29 @@ package com.kaanha.core.migrate.metadata;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import javax.xml.rpc.ServiceException;
-
 import org.springframework.web.client.RestClientException;
-import org.swift.common.soap.jira.RemoteAuthenticationException;
-import org.swift.common.soap.jira.RemoteException;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.kaanha.migrate.core.api.JiraRestApi;
+import com.kaanha.migrate.core.api.JiraApi;
 
-public class JIRAMetadataReader extends JiraRestApi {
+public class JIRAMetadataReader {
 
-	public JIRAMetadataReader(String url, String username, String password) throws RestClientException, URISyntaxException, RemoteAuthenticationException, RemoteException, java.rmi.RemoteException, ServiceException {
-		super(url, username, password);
+	private JiraApi jira;
+
+	public JIRAMetadataReader(JiraApi jira) {
+		this.jira = jira;
 
 	}
 
-	public JsonObject readProjectMetadata() throws URISyntaxException, IOException {
+	public JsonObject readProjectMetadata() throws URISyntaxException,
+			IOException {
 		JsonObject out = new JsonObject();
-		JsonObject results = search("issue/createmeta");
+		JsonObject results = jira.search("issue/createmeta");
 		JsonArray projects = results.get("projects").getAsJsonArray();
 		if (projects.size() == 0) {
 			createProjectMetdata(out);
-		}else{
+		} else {
 			createProjectMetdata(out);
 		}
 		return out;
@@ -54,11 +53,13 @@ public class JIRAMetadataReader extends JiraRestApi {
 		out.add("primitives", primitives);
 	}
 
-	public JsonObject readUserStoryMetadata() throws URISyntaxException, IOException {
+	public JsonObject readUserStoryMetadata() throws URISyntaxException,
+			IOException {
 		return readMetadata("Hierarchical Requirement");
 	}
 
-	private JsonObject readMetadata(String workspaceObjectName) throws IOException, RestClientException, URISyntaxException {
+	private JsonObject readMetadata(String workspaceObjectName)
+			throws IOException, RestClientException, URISyntaxException {
 
 		return null;
 	}

@@ -7,6 +7,7 @@ import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
 import org.swift.common.soap.jira.RemoteAuthenticationException;
 
+import com.kaanha.core.migrate.metadata.RallyMetadataReader;
 import com.kaanha.core.migrate.metadata.RallyMetdataReaderTest;
 
 @Service
@@ -20,7 +21,7 @@ public class FetchMetadataAction {
 			MessageContext messageContext) {
 
 		boolean success = true;
-		RallyMetdataReader
+		RallyMetadataReader rallyMetadataReader = new RallyMetadataReader(url, username, password)
 		return success;
 
 	}

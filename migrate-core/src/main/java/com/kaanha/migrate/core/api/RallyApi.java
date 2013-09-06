@@ -21,7 +21,7 @@ import com.rallydev.rest.request.QueryRequest;
 import com.rallydev.rest.response.QueryResponse;
 import com.rallydev.rest.util.QueryFilter;
 
-public class RallyRestApi extends RestApi {
+public class RallyApi extends RestApi {
 
 	// private ObjectMapper mapper = new ObjectMapper();
 	private JsonParser jsonParser = new JsonParser();
@@ -29,18 +29,18 @@ public class RallyRestApi extends RestApi {
 
 	private SystemX system;
 
-	protected RallyRestApi(String url, String username, String password) throws URISyntaxException, IOException {
+	public RallyApi(String url, String username, String password)
+			throws URISyntaxException, IOException {
 		super(username, password);
-		try {
-			api.close();
-		} catch (Exception e) {
-
-		}
-		api = new com.rallydev.rest.RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
+		close();
+		api = new com.rallydev.rest.RallyRestApi(new URI("https://"
+				+ new URI(url).getHost()), username, password);
 		DBRepository dbRepository = DBRepository.getInstance();
 		system = dbRepository.findSystemByName("Rally");
 		searchObjects(ArtifactType.SUBSCRIPTION);
 	}
+
+
 
 	//
 	// public JsonArray findAll(String name) throws RestClientException,
@@ -60,7 +60,8 @@ public class RallyRestApi extends RestApi {
 	// throw new RestClientException("Could not parse response from: " + json);
 	// }
 
-	protected JsonObject findOne(String ref) throws RestClientException, URISyntaxException {
+	protected JsonObject findOne(String ref) throws RestClientException,
+			URISyntaxException {
 		String json = get(ref);
 		JsonObject jsonObject = jsonParser.parse(json).getAsJsonObject();
 		return jsonObject;
@@ -87,9 +88,11 @@ public class RallyRestApi extends RestApi {
 	// protected JsonArray searchObjects(ArtifactType artifactType, Map<String,
 	// String> filter,
 	// List<String> dataElements) throws IOException {
-	protected JsonArray searchObjects(ArtifactType artifactType, Map<String, String> filter) throws IOException {
+	public JsonArray searchObjects(ArtifactType artifactType,
+			Map<String, String> filter) throws IOException {
 
-		Map<AttributeType, String> attributesMap = system.getAttributesFor(artifactType);
+		Map<AttributeType, String> attributesMap = system
+				.getAttributesFor(artifactType);
 		String objectCode = attributesMap.get(AttributeType.NAME);
 		Collection<String> dataElements = attributesMap.values();
 
@@ -117,24 +120,40 @@ public class RallyRestApi extends RestApi {
 
 	}
 
-	protected JsonArray searchObjects(ArtifactType artifactType) throws IOException {
+	protected JsonArray searchObjects(ArtifactType artifactType)
+			throws IOException {
 		return searchObjects(artifactType, null);
 	}
 
-	protected JsonObject getObjectFromRef(String ref) throws RestClientException, URISyntaxException {
+	protected JsonObject getObjectFromRef(String ref)
+			throws RestClientException, URISyntaxException {
 		return getObjectFromRef(ref, null);
 	}
 
-	protected JsonObject getObjectFromRef(String ref, ArtifactType artifactType) throws RestClientException, URISyntaxException {
+	protected JsonObject getObjectFromRef(String ref, ArtifactType artifactType)
+			throws RestClientException, URISyntaxException {
 		if (artifactType != null) {
-			Collection<String> dataElements = system.getAttributesFor(artifactType).values();
+			Collection<String> dataElements = system.getAttributesFor(
+					artifactType).values();
 			ref = ref + "?fetch=" + StringUtils.join(dataElements, ",");
 		}
 		System.out.println(ref);
 		return findOne(ref);
 	}
 
-	protected JsonArray getCollection(JsonElement obj, String collectionName) throws URISyntaxException {
-		return getObjectFromRef(obj.getAsJsonObject().get(collectionName).getAsJsonObject().get("_ref").getAsString()).getAsJsonObject("QueryResult").getAsJsonArray("Results");
+	public JsonArray getCollection(JsonElement obj, String collectionName)
+			throws URISyntaxException {
+		return getObjectFromRef(
+				obj.getAsJsonObject().get(collectionName).getAsJsonObject()
+						.get("_ref").getAsString()).getAsJsonObject(
+				"QueryResult").getAsJsonArray("Results");
+	}
+	
+	public final void close() {
+		try {
+			api.close();
+		} catch (Exception e) {
+
+		}
 	}
 }
