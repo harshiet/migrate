@@ -22,8 +22,8 @@ import com.googlecode.jsonschema2pojo.SchemaMapper;
 import com.googlecode.jsonschema2pojo.SchemaStore;
 import com.googlecode.jsonschema2pojo.SourceType;
 import com.googlecode.jsonschema2pojo.rules.RuleFactory;
-import com.kaanha.migrate.core.api.rest.RallyRestApi;
-import com.kaanha.migrate.core.api.rest.RestApi;
+import com.kaanha.migrate.core.api.RallyRestApi;
+import com.kaanha.migrate.core.api.RestApi;
 import com.sun.codemodel.JCodeModel;
 
 public class JsonToJavaTest {

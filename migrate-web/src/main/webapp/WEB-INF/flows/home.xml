@@ -13,8 +13,8 @@
 		<transition on="yes" to="fetchSourceFields" />
 		<transition on="no" to="home" />
 	</action-state>
-	<action-state id="fetchSourceFields">
-		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
+	<action-state id="fetchSourceMetdata">
+		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext)" />
 		<transition on="yes" to="fetchTargetFields" />
 		<transition on="no" to="home" />
 	</action-state>

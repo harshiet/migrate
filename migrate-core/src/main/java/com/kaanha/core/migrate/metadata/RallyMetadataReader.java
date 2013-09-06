@@ -10,7 +10,7 @@ import org.springframework.web.client.RestClientException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.kaanha.migrate.core.api.rest.RallyRestApi;
+import com.kaanha.migrate.core.api.RallyRestApi;
 import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 
 public class RallyMetadataReader extends RallyRestApi {

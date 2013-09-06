@@ -11,7 +11,7 @@ import org.swift.common.soap.jira.RemoteException;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.kaanha.migrate.core.api.rest.JiraRestApi;
+import com.kaanha.migrate.core.api.JiraRestApi;
 
 public class JIRAMetadataReader extends JiraRestApi {
 

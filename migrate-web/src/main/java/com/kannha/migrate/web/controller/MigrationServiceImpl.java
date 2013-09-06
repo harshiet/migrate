@@ -12,7 +12,7 @@ import org.swift.common.soap.jira.RemoteAuthenticationException;
 import org.swift.common.soap.jira.RemoteException;
 
 import com.kaanha.core.migrate.metadata.JIRAMetadataReader;
-import com.kaanha.migrate.core.api.rest.RallyReadApi;
+import com.kaanha.migrate.core.api.RallyReadApi;
 
 @Service("migrationService")
 public class MigrationServiceImpl implements MigrationService {

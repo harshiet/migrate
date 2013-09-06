@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.springframework.web.client.RestClientException;
 
-import com.kaanha.migrate.core.api.rest.RestApi;
+import com.kaanha.migrate.core.api.RestApi;
 
 public class RestApiTest extends TestCase {
 
