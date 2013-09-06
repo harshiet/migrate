@@ -3,7 +3,11 @@ package com.kaanha.core.migrate.metadata;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+import javax.xml.rpc.ServiceException;
+
 import org.springframework.web.client.RestClientException;
+import org.swift.common.soap.jira.RemoteAuthenticationException;
+import org.swift.common.soap.jira.RemoteException;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -11,7 +15,7 @@ import com.kaanha.migrate.core.api.rest.JiraRestApi;
 
 public class JIRAMetadataReader extends JiraRestApi {
 
-	public JIRAMetadataReader(String url, String username, String password) throws URISyntaxException {
+	public JIRAMetadataReader(String url, String username, String password) throws RestClientException, URISyntaxException, RemoteAuthenticationException, RemoteException, java.rmi.RemoteException, ServiceException {
 		super(url, username, password);
 
 	}

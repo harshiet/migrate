@@ -27,7 +27,9 @@
 			out.println(sName + " = " + value + "<br>");
 		}*/
 	%>
+	
 	<form:form commandName="migrationRequest" action="${flowExecutionUrl}" method="post">
+	<form:errors path="*" cssClass="error" element="div"/>
 		<table>
 			<tr>
 				<td></td>
