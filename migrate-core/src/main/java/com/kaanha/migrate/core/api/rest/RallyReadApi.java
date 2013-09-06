@@ -14,7 +14,7 @@ import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 
 public class RallyReadApi extends RallyRestApi {
 
-	public RallyReadApi(String url, String username, String password) throws URISyntaxException {
+	public RallyReadApi(String url, String username, String password) throws URISyntaxException, IOException {
 		super(url, username, password);
 	}
 

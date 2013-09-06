@@ -29,7 +29,7 @@ public class RallyRestApi extends RestApi {
 
 	private SystemX system;
 
-	protected RallyRestApi(String url, String username, String password) throws URISyntaxException {
+	protected RallyRestApi(String url, String username, String password) throws URISyntaxException, IOException {
 		super(username, password);
 		try {
 			api.close();
@@ -39,6 +39,7 @@ public class RallyRestApi extends RestApi {
 		api = new com.rallydev.rest.RallyRestApi(new URI("https://" + new URI(url).getHost()), username, password);
 		DBRepository dbRepository = DBRepository.getInstance();
 		system = dbRepository.findSystemByName("Rally");
+		searchObjects(ArtifactType.SUBSCRIPTION);
 	}
 
 	//

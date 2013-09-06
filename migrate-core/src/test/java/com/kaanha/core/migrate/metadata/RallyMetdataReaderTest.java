@@ -22,6 +22,7 @@ public class RallyMetdataReaderTest extends TestCase {
 			assertTrue(metadata.get("primitives").getAsJsonArray().size() > 0);
 			System.out.println(metadata);
 		} catch (URISyntaxException | IOException e) {
+			e.printStackTrace();
 			fail(e.getMessage());
 		}
 

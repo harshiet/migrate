@@ -1,5 +1,6 @@
 package com.kannha.migrate.web.controller;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 
 import org.apache.log4j.Logger;
@@ -13,7 +14,7 @@ public class MigrationServiceImpl implements MigrationService {
 
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
-	public void connectSource(MigrationRequest migrationRequest) throws URISyntaxException {
+	public void connectSource(MigrationRequest migrationRequest) throws URISyntaxException, IOException {
 		logger.debug("connectSource");
 		RallyReadApi rallyReadApi = new RallyReadApi(migrationRequest.getSourceUrl(), migrationRequest.getSourceUsername(), migrationRequest.getSourcePassword());
 	}

@@ -15,7 +15,7 @@ import com.kaanha.migrate.core.persistence.domain.ArtifactType;
 
 public class RallyMetadataReader extends RallyRestApi {
 
-	public RallyMetadataReader(String url, String username, String password) throws URISyntaxException {
+	public RallyMetadataReader(String url, String username, String password) throws URISyntaxException, IOException {
 		super(url, username, password);
 
 	}

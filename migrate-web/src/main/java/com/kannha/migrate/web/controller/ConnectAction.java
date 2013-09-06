@@ -18,12 +18,14 @@ public class ConnectAction {
 		try {
 			migrationService.connectSource(migrationRequest);
 		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
 			success = false;
 			messageContext.addMessage(new MessageBuilder().error().defaultText(e.getMessage()).build());
 		}
 		try {
 			migrationService.connectTarget(migrationRequest);
 		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
 			success = false;
 			messageContext.addMessage(new MessageBuilder().error().defaultText(e.getMessage()).build());
 		}
