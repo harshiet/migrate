@@ -12,6 +12,7 @@ import org.swift.common.soap.jira.RemoteAuthenticationException;
 import org.swift.common.soap.jira.RemoteException;
 
 import com.kaanha.migrate.core.api.JiraApi;
+import com.kaanha.migrate.core.api.RallyApi;
 import com.kaanha.migrate.core.api.RallyReadApi;
 
 @Service("migrationService")
@@ -19,17 +20,18 @@ public class MigrationServiceImpl implements MigrationService {
 
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
-	public void connectSource(MigrationRequest migrationRequest)
+	public RallyApi connectSource(MigrationRequest migrationRequest)
 			throws URISyntaxException, IOException {
 		logger.debug("connectSource");
 		RallyReadApi rallyReadApi = new RallyReadApi(
 				migrationRequest.getSourceUrl(),
 				migrationRequest.getSourceUsername(),
 				migrationRequest.getSourcePassword());
+		return rallyReadApi;
 
 	}
 
-	public void connectTarget(MigrationRequest migrationRequest)
+	public JiraApi connectTarget(MigrationRequest migrationRequest)
 			throws URISyntaxException, RemoteAuthenticationException,
 			RemoteException, RestClientException, java.rmi.RemoteException,
 			ServiceException {
@@ -37,6 +39,7 @@ public class MigrationServiceImpl implements MigrationService {
 		JiraApi jira = new JiraApi(migrationRequest.getTargetUrl(),
 				migrationRequest.getTargetUsername(),
 				migrationRequest.getTargetPassword());
+		return jira;
 	}
 
 }

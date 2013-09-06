@@ -2,13 +2,9 @@ package com.kannha.migrate.web.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
-import org.swift.common.soap.jira.RemoteAuthenticationException;
-
-import com.kaanha.core.migrate.metadata.RallyMetadataReader;
-import com.kaanha.core.migrate.metadata.RallyMetdataReaderTest;
+import org.springframework.web.servlet.support.RequestContext;
 
 @Service
 public class FetchMetadataAction {
@@ -18,10 +14,11 @@ public class FetchMetadataAction {
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
 	public boolean fetch(MigrationRequest migrationRequest,
-			MessageContext messageContext) {
+			MessageContext messageContext, RequestContext requestContext) {
 
 		boolean success = true;
-		RallyMetadataReader rallyMetadataReader = new RallyMetadataReader(url, username, password)
+		logger.debug(requestContext.getModel().get("rally"));
+		logger.debug(requestContext.getModel().get("jira"));
 		return success;
 
 	}

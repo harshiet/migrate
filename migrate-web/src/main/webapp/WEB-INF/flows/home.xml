@@ -9,12 +9,12 @@
 		<transition on="submit" to="connect" />
 	</view-state>
 	<action-state id="connect">
-		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
-		<transition on="yes" to="fetchSourceFields" />
+		<evaluate expression="connectAction.connect(migrationRequest, messageContext, flowRequestContext)" />
+		<transition on="yes" to="fetchSourceMetdata" />
 		<transition on="no" to="home" />
 	</action-state>
 	<action-state id="fetchSourceMetdata">
-		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext)" />
+		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext, flowRequestContext)" />
 		<transition on="yes" to="fetchTargetFields" />
 		<transition on="no" to="home" />
 	</action-state>

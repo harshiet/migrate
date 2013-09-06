@@ -9,8 +9,8 @@ public class MigrationRequest implements Serializable {
 	private String sourceUsername = "rally.user.2@gmail.com";
 	private String sourcePassword = "RallyUser123!";
 	private String targetUrl = "https://kaanha.atlassian.net";
-	private String targetUsername = "rally.user.2@gmail.com";
-	private String targetPassword = "RallyUser123!";
+	private String targetUsername = "admin";
+	private String targetPassword = "admin123";
 
 	public String getSourceUrl() {
 		return sourceUrl;

@@ -5,7 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.RequestContext;
 import org.swift.common.soap.jira.RemoteAuthenticationException;
+
+import com.kaanha.migrate.core.api.JiraApi;
+import com.kaanha.migrate.core.api.RallyApi;
 
 @Service
 public class ConnectAction {
@@ -15,11 +19,12 @@ public class ConnectAction {
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
 	public boolean connect(MigrationRequest migrationRequest,
-			MessageContext messageContext) {
+			MessageContext messageContext, RequestContext requestContext) {
 
 		boolean success = true;
 		try {
-			migrationService.connectSource(migrationRequest);
+			RallyApi rally = migrationService.connectSource(migrationRequest);
+			requestContext.getModel().put("rally", rally);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			success = false;
@@ -27,7 +32,8 @@ public class ConnectAction {
 					.defaultText(e.getMessage()).build());
 		}
 		try {
-			migrationService.connectTarget(migrationRequest);
+			JiraApi jira = migrationService.connectTarget(migrationRequest);
+			requestContext.getModel().put("jira", jira);
 		} catch (RemoteAuthenticationException e) {
 			logger.error(e.getMessage(), e);
 			success = false;

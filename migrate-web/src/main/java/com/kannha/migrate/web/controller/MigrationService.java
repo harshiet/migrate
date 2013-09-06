@@ -9,9 +9,16 @@ import org.springframework.web.client.RestClientException;
 import org.swift.common.soap.jira.RemoteAuthenticationException;
 import org.swift.common.soap.jira.RemoteException;
 
+import com.kaanha.migrate.core.api.JiraApi;
+import com.kaanha.migrate.core.api.RallyApi;
 
 public interface MigrationService {
 
-	void connectSource(MigrationRequest migrationRequest) throws URISyntaxException, IOException;
-	void connectTarget(MigrationRequest migrationRequest) throws URISyntaxException, RemoteAuthenticationException, RemoteException, RestClientException, java.rmi.RemoteException, ServiceException;
+	RallyApi connectSource(MigrationRequest migrationRequest)
+			throws URISyntaxException, IOException;
+
+	JiraApi connectTarget(MigrationRequest migrationRequest)
+			throws URISyntaxException, RemoteAuthenticationException,
+			RemoteException, RestClientException, java.rmi.RemoteException,
+			ServiceException;
 }
