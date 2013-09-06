@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.RequestContext;
+import org.springframework.webflow.execution.RequestContext;
 import org.swift.common.soap.jira.RemoteAuthenticationException;
 
 import com.kaanha.migrate.core.api.JiraApi;
@@ -19,12 +19,13 @@ public class ConnectAction {
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
 	public boolean connect(MigrationRequest migrationRequest,
-			MessageContext messageContext, RequestContext requestContext) {
+			MessageContext messageContext,
+			RequestContext requestContext) {
 
 		boolean success = true;
 		try {
 			RallyApi rally = migrationService.connectSource(migrationRequest);
-			requestContext.getModel().put("rally", rally);
+			requestContext.getFlowScope().put("rally", rally);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			success = false;

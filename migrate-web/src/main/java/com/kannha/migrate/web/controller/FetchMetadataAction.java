@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.support.RequestContext;
+import org.springframework.webflow.execution.RequestContext;
 
 @Service
 public class FetchMetadataAction {
@@ -17,8 +17,8 @@ public class FetchMetadataAction {
 			MessageContext messageContext, RequestContext requestContext) {
 
 		boolean success = true;
-		logger.debug(requestContext.getModel().get("rally"));
-		logger.debug(requestContext.getModel().get("jira"));
+		logger.debug(requestContext.getFlowScope().get("rally"));
+		logger.debug(requestContext.getFlowScope().get("jira"));
 		return success;
 
 	}
