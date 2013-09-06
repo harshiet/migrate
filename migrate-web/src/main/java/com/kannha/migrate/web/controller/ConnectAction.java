@@ -34,7 +34,7 @@ public class ConnectAction {
 		}
 		try {
 			JiraApi jira = migrationService.connectTarget(migrationRequest);
-			requestContext.getModel().put("jira", jira);
+			requestContext.getFlowScope().put("jira", jira);
 		} catch (RemoteAuthenticationException e) {
 			logger.error(e.getMessage(), e);
 			success = false;
