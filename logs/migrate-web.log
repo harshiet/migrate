@@ -13624,3 +13624,1147 @@ Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:
 14:55:17,253  INFO org.springframework.beans.factory.support.DefaultSingletonBeanRegistry DefaultListableBeanFactory:444 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@70dedaf4: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cartService,connectAction,homeController,migrationService,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,viewResolver,flowController,flowExecutor,flowRegistry,org.springframework.binding.convert.service.DefaultConversionService#0,org.springframework.webflow.expression.spel.WebFlowSpringELExpressionParser#0,flowBuilderServices,viewFactoryCreator,migrationRequest,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
 14:55:17,256  INFO org.springframework.context.support.AbstractApplicationContext GenericWebApplicationContext:1042 - Closing Flow ApplicationContext [home]: startup date [Wed Sep 04 14:54:32 EDT 2013]; parent: WebApplicationContext for namespace 'mycart-servlet'
 14:55:17,258  INFO org.springframework.beans.factory.support.DefaultSingletonBeanRegistry DefaultListableBeanFactory:444 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1fda9893: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@70dedaf4
+09:26:58,956  INFO org.springframework.web.servlet.FrameworkServlet DispatcherServlet:454 - FrameworkServlet 'mycart': initialization started
+09:26:59,008  INFO org.springframework.context.support.AbstractApplicationContext XmlWebApplicationContext:510 - Refreshing WebApplicationContext for namespace 'mycart-servlet': startup date [Fri Sep 06 09:26:59 EDT 2013]; root of context hierarchy
+09:26:59,083  INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader XmlBeanDefinitionReader:315 - Loading XML bean definitions from ServletContext resource [/WEB-INF/mycart-servlet.xml]
+09:26:59,311  INFO org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider ClassPathBeanDefinitionScanner:231 - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+09:26:59,313  INFO org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider ClassPathBeanDefinitionScanner:239 - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+09:26:59,509  INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor AutowiredAnnotationBeanPostProcessor:140 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+09:26:59,525  INFO org.springframework.beans.factory.support.DefaultListableBeanFactory DefaultListableBeanFactory:598 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@51a10b2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cartService,connectAction,homeController,migrationService,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,viewResolver,flowController,flowExecutor,flowRegistry,org.springframework.binding.convert.service.DefaultConversionService#0,org.springframework.webflow.expression.spel.WebFlowSpringELExpressionParser#0,flowBuilderServices,viewFactoryCreator,migrationRequest,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+09:26:59,652  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping DefaultAnnotationHandlerMapping:315 - Mapped URL path [/homes.do] onto handler 'homeController'
+09:26:59,919  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/account/login.do] onto handler 'flowController'
+09:26:59,920  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/checkout.do] onto handler 'flowController'
+09:26:59,920  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/home.do] onto handler 'flowController'
+09:26:59,920  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/account/register.do] onto handler 'flowController'
+09:27:00,267  INFO org.springframework.web.servlet.FrameworkServlet DispatcherServlet:473 - FrameworkServlet 'mycart': initialization completed in 1288 ms
+09:27:00,408  INFO org.springframework.context.support.AbstractApplicationContext GenericWebApplicationContext:510 - Refreshing Flow ApplicationContext [home]: startup date [Fri Sep 06 09:27:00 EDT 2013]; parent: WebApplicationContext for namespace 'mycart-servlet'
+09:27:00,412  INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor AutowiredAnnotationBeanPostProcessor:140 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+09:27:00,414  INFO org.springframework.beans.factory.support.DefaultListableBeanFactory DefaultListableBeanFactory:598 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@47fb8997: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@51a10b2b
+09:27:02,918 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:17 - connectSource
+09:27:03,198 DEBUG org.hibernate.ejb.Ejb3Configuration logging:144 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+09:27:03,240 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,241 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,241 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,242 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2d55cf6b
+09:27:03,244 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@7a0a4916
+09:27:03,245 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@69b2b4e6
+09:27:03,247 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,248 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,248 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,249 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,250 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,251 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,255 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@2040873f
+09:27:03,256 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@2040873f
+09:27:03,257 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@2040873f
+09:27:03,259 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,260 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,260 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,263 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@22be0b18
+09:27:03,263 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@22be0b18
+09:27:03,264 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@22be0b18
+09:27:03,269 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@d79f753
+09:27:03,271 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@d79f753
+09:27:03,272 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@d79f753
+09:27:03,274 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,274 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,275 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,276 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@7f72b53c
+09:27:03,277 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@7f72b53c
+09:27:03,278 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7ead6f99
+09:27:03,279 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7ead6f99
+09:27:03,280 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@383d5802
+09:27:03,281 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@383d5802
+09:27:03,282 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@d31f6b2
+09:27:03,283 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@143f5759
+09:27:03,288 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@69264ce7
+09:27:03,289 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@69264ce7
+09:27:03,291 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@12f4531
+09:27:03,292 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@12f4531
+09:27:03,294 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@30f35eeb
+09:27:03,294 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@30f35eeb
+09:27:03,296 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,296 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,297 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,300 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@75bfbbb0
+09:27:03,305 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,305 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,305 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,307 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1d716427
+09:27:03,308 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@465dccb7
+09:27:03,308 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@465dccb7
+09:27:03,310 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@2d1416c8
+09:27:03,312 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2d1416c8
+09:27:03,314 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5519f1fe
+09:27:03,315 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5519f1fe
+09:27:03,316 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@1ca9b46b
+09:27:03,316 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1ca9b46b
+09:27:03,319 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@7f41a505
+09:27:03,319 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@7f41a505
+09:27:03,321 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@26019c88
+09:27:03,322 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@32e022ae
+09:27:03,324 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,324 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,326 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,331 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,331 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,332 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,335 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@4a8b9b70
+09:27:03,338 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,338 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,339 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,340 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,342 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,342 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,343 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@17292bd8
+09:27:03,344 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@30178442
+09:27:03,349 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@2dba1e92
+09:27:03,350 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2dba1e92
+09:27:03,350 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7eac872f
+09:27:03,354 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@45d97b62
+09:27:03,355 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@45d97b62
+09:27:03,359 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@65537576
+09:27:03,360 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@65537576
+09:27:03,360 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@26eab18a
+09:27:03,361 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@403d9a08
+09:27:03,369 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@6e04e856
+09:27:03,373 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@45115284
+09:27:03,374 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@45115284
+09:27:03,375 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@49e7cef
+09:27:03,376 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@411c3147
+09:27:03,376 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@21e74db6
+09:27:03,377 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@589ef91d
+09:27:03,377 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@2cf50c5f
+09:27:03,378 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@bff4808
+09:27:03,381 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@24d20b5f
+09:27:03,387 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@59e89cdb
+09:27:03,414  INFO org.hibernate.annotations.common.Version Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+09:27:03,424  INFO org.hibernate.Version Version:41 - HHH000412: Hibernate Core {4.2.2.Final}
+09:27:03,429  INFO org.hibernate.cfg.Environment Environment:239 - HHH000206: hibernate.properties not found
+09:27:03,431  INFO org.hibernate.cfg.Environment Environment:342 - HHH000021: Bytecode provider name : javassist
+09:27:03,451 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+09:27:03,452 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+09:27:03,454 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+09:27:03,454 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+09:27:03,456 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+09:27:03,457 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+09:27:03,458 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+09:27:03,459 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+09:27:03,460 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+09:27:03,460 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+09:27:03,462 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+09:27:03,463 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+09:27:03,464 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+09:27:03,465 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+09:27:03,467 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+09:27:03,473 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,474 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,474 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@228cc192
+09:27:03,475 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2d55cf6b
+09:27:03,475 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@7a0a4916
+09:27:03,476 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@69b2b4e6
+09:27:03,476 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,476 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,477 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7996bc1
+09:27:03,477 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,477 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,478 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5368e53a
+09:27:03,478 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@2040873f
+09:27:03,478 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@2040873f
+09:27:03,479 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@2040873f
+09:27:03,479 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,480 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,480 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@725ff90a
+09:27:03,480 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@22be0b18
+09:27:03,481 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@22be0b18
+09:27:03,481 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@22be0b18
+09:27:03,482 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@d79f753
+09:27:03,482 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@d79f753
+09:27:03,482 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@d79f753
+09:27:03,483 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,485 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,488 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4dfddf0f
+09:27:03,489 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@7f72b53c
+09:27:03,489 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@7f72b53c
+09:27:03,490 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7ead6f99
+09:27:03,490 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7ead6f99
+09:27:03,491 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@383d5802
+09:27:03,491 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@383d5802
+09:27:03,491 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@d31f6b2
+09:27:03,492 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@143f5759
+09:27:03,492 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@69264ce7
+09:27:03,492 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@69264ce7
+09:27:03,508 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@12f4531
+09:27:03,508 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@12f4531
+09:27:03,509 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@30f35eeb
+09:27:03,511 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@30f35eeb
+09:27:03,511 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,512 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,514 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@79fc530e
+09:27:03,514 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@75bfbbb0
+09:27:03,515 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,515 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,516 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@3db60ec4
+09:27:03,516 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1d716427
+09:27:03,517 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@465dccb7
+09:27:03,517 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@465dccb7
+09:27:03,517 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@2d1416c8
+09:27:03,518 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2d1416c8
+09:27:03,518 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5519f1fe
+09:27:03,519 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5519f1fe
+09:27:03,519 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@1ca9b46b
+09:27:03,520 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1ca9b46b
+09:27:03,520 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@7f41a505
+09:27:03,520 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@7f41a505
+09:27:03,521 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@26019c88
+09:27:03,522 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@32e022ae
+09:27:03,522 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,522 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,523 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@149d4f38
+09:27:03,523 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,524 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,524 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@62ddf31d
+09:27:03,525 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@4a8b9b70
+09:27:03,529 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,529 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,530 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@7aeda92
+09:27:03,530 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,530 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,531 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5c59ef8b
+09:27:03,531 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@17292bd8
+09:27:03,532 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@30178442
+09:27:03,533 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@2dba1e92
+09:27:03,534 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2dba1e92
+09:27:03,535 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7eac872f
+09:27:03,537 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@45d97b62
+09:27:03,538 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@45d97b62
+09:27:03,538 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@65537576
+09:27:03,539 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@65537576
+09:27:03,539 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@26eab18a
+09:27:03,539 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@403d9a08
+09:27:03,540 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@6e04e856
+09:27:03,540 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@45115284
+09:27:03,541 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@45115284
+09:27:03,541 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5dfd5269
+09:27:03,541 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@222d9bb4
+09:27:03,541 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@604957f3
+09:27:03,542 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@6f2d43e7
+09:27:03,542 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@4c52bb7
+09:27:03,542 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@2cb8fdd3
+09:27:03,543 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@25203e95
+09:27:03,543 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@67ecbb3d
+09:27:03,543 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+09:27:03,544 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+09:27:03,544 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+09:27:03,544 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+09:27:03,545 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+09:27:03,545 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+09:27:03,545 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+09:27:03,546 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+09:27:03,546 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+09:27:03,546 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+09:27:03,547 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+09:27:03,547 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+09:27:03,547 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+09:27:03,548 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+09:27:03,548 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+09:27:03,548 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:316 - Look up for persistence unit: migrate
+09:27:03,604 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:851 - Detect class: true; detect hbm: true
+09:27:03,618 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:126 - Searching mapped entities in jar/par: file:/Users/Harsh/.m2/repository/com/kaanha/migrate-core/0.0.1-SNAPSHOT/migrate-core-0.0.1-SNAPSHOT.jar
+09:27:03,619 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraEngine
+09:27:03,645 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraTransformationEngine$1
+09:27:03,647 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraTransformationEngine
+09:27:03,651 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.TransformationEngine
+09:27:03,651 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.metadata.JIRAMetadataReader
+09:27:03,652 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.metadata.RallyMetadataReader
+09:27:03,654 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.JiraRestApi
+09:27:03,655 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.JiraWriteApi
+09:27:03,656 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RallyReadApi
+09:27:03,659 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RallyRestApi
+09:27:03,664 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RestApi
+09:27:03,665 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.App
+09:27:03,666 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.api.DBRepository
+09:27:03,667 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.ArtifactType
+09:27:03,679 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.AttributeType
+09:27:03,680 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.Persistable
+09:27:03,694 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.Persistable
+09:27:03,695 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QPersistable
+09:27:03,696 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QSystemAttribute
+09:27:03,697 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QSystemX
+09:27:03,698 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:27:03,699 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:27:03,699 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:03,701 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:03,706 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:851 - Detect class: true; detect hbm: true
+09:27:03,707 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:205 - Creating Factory: migrate
+09:27:03,723 DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+09:27:03,724 DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.ejb.event.JpaIntegrator].
+09:27:03,754 DEBUG org.hibernate.ejb.util.NamingHelper NamingHelper:50 - No JNDI name configured for binding Ejb3Configuration
+09:27:03,765 DEBUG org.hibernate.cfg.Configuration Configuration:1753 - Preparing to build session factory with filters : {}
+09:27:03,777  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+09:27:03,785  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 20
+09:27:03,786  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+09:27:03,787  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/migrate]
+09:27:03,788  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:154 - HHH000046: Connection properties: {user=postgres, password=postgres, autocommit=true, release_mode=auto}
+09:27:03,816 DEBUG org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:196 - Opening new JDBC connection
+09:27:03,976 DEBUG org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:219 - Created connection to: jdbc:postgresql://localhost:5432/migrate, Isolation Level: 2
+09:27:03,983 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:121 - Database ->
+       name : PostgreSQL
+    version : 9.2.4
+      major : 9
+      minor : 2
+09:27:03,983 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:127 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.0 JDBC4 (build 801)
+      major : 9
+      minor : 0
+09:27:03,984 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:133 - JDBC version : 4.0
+09:27:04,186  INFO org.hibernate.dialect.Dialect Dialect:130 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:27:04,204  INFO org.hibernate.engine.jdbc.internal.LobCreatorBuilder LobCreatorBuilder:120 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:27:04,250 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3472 - Processing hbm.xml files
+09:27:04,251 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3502 - Process annotated classes
+09:27:04,264 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:532 - Binding entity from annotated class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:04,287 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+09:27:04,290 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:990 - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+09:27:04,296 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:394 - Import with entity name system
+09:27:04,299 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:564 - Bind entity com.kaanha.migrate.core.persistence.domain.SystemX on table system
+09:27:04,357 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=id, insertable=true, updatable=true, unique=false}
+09:27:04,364 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+09:27:04,372 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for id
+09:27:04,374 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property id
+09:27:04,381 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='SYSTEM_ID', referencedColumn='ID', mappedBy=''}
+09:27:04,381 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=attributes, insertable=true, updatable=true, unique=false}
+09:27:04,383 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=null, insertable=true, updatable=true, unique=false}
+09:27:04,396 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=element, insertable=true, updatable=true, unique=false}
+09:27:04,397 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=attributes_KEY, insertable=true, updatable=true, unique=false}
+09:27:04,399 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='attributes_KEY', referencedColumn='null', mappedBy='null'}
+09:27:04,401 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+09:27:04,401 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+09:27:04,402 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:400 - Collection role: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:27:04,406 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property attributes
+09:27:04,406 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=name, insertable=true, updatable=true, unique=false}
+09:27:04,407 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property name with lazy=false
+09:27:04,407 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for name
+09:27:04,408 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property name
+09:27:04,408 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=version, insertable=true, updatable=true, unique=false}
+09:27:04,408 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property version with lazy=false
+09:27:04,409 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for version
+09:27:04,409 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property version
+09:27:04,410 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:532 - Binding entity from annotated class: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:27:04,411 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+09:27:04,412 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:990 - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+09:27:04,413 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:394 - Import with entity name SystemAttribute
+09:27:04,413 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:564 - Bind entity com.kaanha.migrate.core.persistence.domain.SystemAttribute on table system_attribute
+09:27:04,418 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=id, insertable=true, updatable=true, unique=false}
+09:27:04,418 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+09:27:04,419 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for id
+09:27:04,419 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property id
+09:27:04,419 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=artifact, insertable=true, updatable=true, unique=false}
+09:27:04,420 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property artifact with lazy=false
+09:27:04,422 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for artifact
+09:27:04,423 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property artifact
+09:27:04,423 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=attribute, insertable=true, updatable=true, unique=false}
+09:27:04,424 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property attribute with lazy=false
+09:27:04,424 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for attribute
+09:27:04,424 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property attribute
+09:27:04,425 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=name, insertable=true, updatable=true, unique=false}
+09:27:04,425 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property name with lazy=false
+09:27:04,425 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for name
+09:27:04,426 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property name
+09:27:04,427 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for id
+09:27:04,427 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for name
+09:27:04,428 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for version
+09:27:04,428 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for id
+09:27:04,428 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for artifact
+09:27:04,429 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for attribute
+09:27:04,429 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for name
+09:27:04,430 DEBUG org.hibernate.cfg.Configuration Configuration:1420 - Processing fk mappings (*ToOne and JoinedSubclass)
+09:27:04,431 DEBUG org.hibernate.cfg.Configuration Configuration:1603 - Processing extends queue
+09:27:04,431 DEBUG org.hibernate.cfg.Configuration Configuration:1661 - Processing extends queue
+09:27:04,432 DEBUG org.hibernate.cfg.Configuration Configuration:1606 - Processing collection mappings
+09:27:04,432 DEBUG org.hibernate.cfg.CollectionSecondPass CollectionSecondPass:66 - Second pass for collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:27:04,432 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:761 - Binding a OneToMany: com.kaanha.migrate.core.persistence.domain.SystemX.attributes through a foreign key
+09:27:04,433 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:790 - Mapping collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes -> system_attribute
+09:27:04,437 DEBUG org.hibernate.cfg.CollectionSecondPass CollectionSecondPass:83 - Mapped collection key: SYSTEM_ID, one-to-many: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:27:04,437 DEBUG org.hibernate.cfg.Configuration Configuration:1616 - Processing native query and ResultSetMapping mappings
+09:27:04,438 DEBUG org.hibernate.cfg.Configuration Configuration:1624 - Processing association property references
+09:27:04,439 DEBUG org.hibernate.cfg.Configuration Configuration:1646 - Creating tables' unique integer identifiers
+09:27:04,439 DEBUG org.hibernate.cfg.Configuration Configuration:1647 - Processing foreign key constraints
+09:27:04,439 DEBUG org.hibernate.cfg.Configuration Configuration:1718 - Resolving reference to class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:04,451 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:114 - Automatic flush during beforeCompletion(): disabled
+09:27:04,451 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:120 - Automatic session close at end of transaction: disabled
+09:27:04,452 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:131 - JDBC batch size: 15
+09:27:04,452 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:137 - JDBC batch updates for versioned data: disabled
+09:27:04,452 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:147 - Scrollable result sets: enabled
+09:27:04,453 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:153 - Wrap result sets: disabled
+09:27:04,453 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:159 - JDBC3 getGeneratedKeys(): enabled
+09:27:04,453 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:171 - multi-tenancy strategy : NONE
+09:27:04,454 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:177 - Connection release mode: auto
+09:27:04,454  INFO org.hibernate.engine.transaction.internal.TransactionFactoryInitiator TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+09:27:04,457 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:199 - Using BatchFetchStyle : LEGACY
+09:27:04,458 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:224 - Default batch fetch size: 1
+09:27:04,458 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:230 - Generate SQL with comments: disabled
+09:27:04,459 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:236 - Order SQL updates by primary key: disabled
+09:27:04,459 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:242 - Order SQL inserts for batching: disabled
+09:27:04,459 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:250 - Default null ordering: none
+09:27:04,460 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:541 - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+09:27:04,469  INFO org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+09:27:04,470 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:260 - Query language substitutions: {}
+09:27:04,471 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:266 - JPA-QL strict compliance: enabled
+09:27:04,471 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:274 - Second-level cache: enabled
+09:27:04,472 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:280 - Query cache: disabled
+09:27:04,472 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:481 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+09:27:04,473 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:491 - org.hibernate.cache.internal.NoCachingRegionFactory did not provide constructor accepting java.util.Properties; attempting no-arg constructor.
+09:27:04,474 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:295 - Optimize cache for minimal puts: disabled
+09:27:04,475 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:310 - Structured second-level cache entries: disabled
+09:27:04,475 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:320 - Second-level cache direct-reference entries: disabled
+09:27:04,482 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:328 - Statistics: disabled
+09:27:04,484 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:334 - Deleted entity synthetic identifier rollback: disabled
+09:27:04,485 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:358 - Default entity-mode: pojo
+09:27:04,486 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:364 - Named query checking : enabled
+09:27:04,486 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:370 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+09:27:04,486 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:388 - Allow initialization of lazy state outside session : : disabled
+09:27:04,487 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:398 - JTA Track by Thread: enabled
+09:27:04,499 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:225 - Building session factory
+09:27:04,514 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:277 - Session factory constructed with filter configurations : {}
+09:27:04,514 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:278 - Instantiating session factory with properties: {java.vendor=Oracle Corporation, sun.java.launcher=SUN_STANDARD, hibernate.connection.url=jdbc:postgresql://localhost:5432/migrate, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.ejb.discard_pc_on_close=false, hibernate.transaction.flush_before_completion=false, os.name=Mac OS X, sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/classes, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.7.0_25-b15, hibernate.connection.autocommit=true, user.name=Harsh, guice.disable.misplaced.annotation.check=true, hibernate.connection.release_mode=auto, user.language=en, sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib, classworlds.conf=/Users/Harsh/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf4591273563500325672.tmp, java.version=1.7.0_25, user.timezone=America/New_York, sun.arch.data.model=64, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/endorsed, sun.cpu.isalist=, sun.jnu.encoding=US-ASCII, file.encoding.pkg=sun.io, file.separator=/, java.specification.name=Java Platform API Specification, hibernate.format_sql=true, java.class.version=51.0, user.country=US, java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre, java.vm.info=mixed mode, os.version=10.8.4, hibernate.transaction.factory_class=org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory, hibernate.query.jpaql_strict_compliance=true, path.separator=:, java.vm.version=23.25-b01, hibernate.connection.password=postgres, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, sun.io.unicode.encoding=UnicodeBig, awt.toolkit=sun.lwawt.macosx.LWCToolkit, hibernate.connection.username=postgres, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, user.home=/Users/Harsh, java.specification.vendor=Oracle Corporation, hibernate.hbm2ddl.auto=update, java.library.path=/Users/Harsh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., java.vendor.url=http://java.oracle.com/, hibernate.connection.driver_class=org.postgresql.Driver, java.vm.vendor=Oracle Corporation, gopherProxySet=false, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, maven.home=/Users/Harsh/git/migrate/migrate-web/EMBEDDED, java.runtime.name=Java(TM) SE Runtime Environment, hibernate.archive.autodetection=class, hbm, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher -B -s /Users/Harsh/.m2/settings.xml jetty:run, java.class.path=/Users/Harsh/Documents/DevTools/eclipse/configuration/org.eclipse.osgi/bundles/266/1/.cp/jars/plexus-classworlds-2.4.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.name=Java Virtual Machine Specification, java.vm.specification.version=1.7, sun.cpu.endian=little, javax.persistence.jdbc.driver=org.postgresql.Driver, sun.os.patch.level=unknown, java.io.tmpdir=/var/folders/wp/r_m0snn94bd2zq88p72zz0700000gn/T/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, os.arch=x86_64, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, java.ext.dirs=/Users/Harsh/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, user.dir=/Users/Harsh/git/migrate/migrate-web, line.separator=
+, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding=US-ASCII, hibernate.use_identifier_rollback=false, java.specification.version=1.7, maven.bootclasspath=/Users/Harsh/Documents/DevTools/eclipse/configuration/org.eclipse.osgi/bundles/266/1/.cp/jars/plexus-classworlds-2.4.jar, hibernate.show_sql=false}
+09:27:04,542 DEBUG org.hibernate.cfg.beanvalidation.TypeSafeActivator TypeSafeActivator:106 - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+09:27:04,646 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:27:04,649 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:27:04,756 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3592 - Static SQL for entity: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:27:04,756 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3597 -  Version select: select id from system_attribute where id =?
+09:27:04,757 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3600 -  Snapshot select: select systemattr_.id, systemattr_.artifact as artifact2_1_, systemattr_.attribute as attribut3_1_, systemattr_.name as name4_1_ from system_attribute systemattr_ where systemattr_.id=?
+09:27:04,757 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3603 -  Insert 0: insert into system_attribute (artifact, attribute, name, id) values (?, ?, ?, ?)
+09:27:04,757 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3604 -  Update 0: update system_attribute set artifact=?, attribute=?, name=? where id=?
+09:27:04,758 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3605 -  Delete 0: delete from system_attribute where id=?
+09:27:04,771 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3592 - Static SQL for entity: com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:04,772 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3597 -  Version select: select id from system where id =?
+09:27:04,772 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3600 -  Snapshot select: select systemx_.id, systemx_.name as name2_0_, systemx_.version as version3_0_ from system systemx_ where systemx_.id=?
+09:27:04,773 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3603 -  Insert 0: insert into system (name, version, id) values (?, ?, ?)
+09:27:04,773 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3604 -  Update 0: update system set name=?, version=? where id=?
+09:27:04,773 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3605 -  Delete 0: delete from system where id=?
+09:27:04,784 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:665 - Static SQL for collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:27:04,785 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:666 -  Row insert: update system_attribute set SYSTEM_ID=? where id=?
+09:27:04,785 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:667 -  Row update: update system_attribute set  where id=?
+09:27:04,785 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:668 -  Row delete: update system_attribute set SYSTEM_ID=null where SYSTEM_ID=? and id=?
+09:27:04,786 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:669 -  One-shot delete: update system_attribute set SYSTEM_ID=null where SYSTEM_ID=?
+09:27:04,806 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [NONE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,807 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [READ]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,808 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [UPGRADE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update
+09:27:04,808 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [UPGRADE_NOWAIT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:27:04,809 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [FORCE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:27:04,810 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_READ]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for share
+09:27:04,812 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_WRITE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update
+09:27:04,812 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_FORCE_INCREMENT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:27:04,816 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [OPTIMISTIC]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,817 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [OPTIMISTIC_FORCE_INCREMENT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,824 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_MERGE on entity com.kaanha.migrate.core.persistence.domain.SystemAttribute: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,825 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_REFRESH on entity com.kaanha.migrate.core.persistence.domain.SystemAttribute: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:27:04,825 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [NONE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:27:04,826 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [READ]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:27:04,826 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [UPGRADE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update
+09:27:04,827 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [UPGRADE_NOWAIT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:27:04,827 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [FORCE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:27:04,828 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_READ]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for share
+09:27:04,828 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_WRITE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update
+09:27:04,829 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_FORCE_INCREMENT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:27:04,829 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [OPTIMISTIC]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:27:04,829 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [OPTIMISTIC_FORCE_INCREMENT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:27:04,834 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_MERGE on entity com.kaanha.migrate.core.persistence.domain.SystemX: select systemx0_.id as id1_0_1_, systemx0_.name as name2_0_1_, systemx0_.version as version3_0_1_, attributes1_.SYSTEM_ID as SYSTEM5_0_3_, attributes1_.id as id1_1_3_, attributes1_.id as id1_1_0_, attributes1_.artifact as artifact2_1_0_, attributes1_.attribute as attribut3_1_0_, attributes1_.name as name4_1_0_ from system systemx0_ left outer join system_attribute attributes1_ on systemx0_.id=attributes1_.SYSTEM_ID where systemx0_.id=?
+09:27:04,834 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_REFRESH on entity com.kaanha.migrate.core.persistence.domain.SystemX: select systemx0_.id as id1_0_1_, systemx0_.name as name2_0_1_, systemx0_.version as version3_0_1_, attributes1_.SYSTEM_ID as SYSTEM5_0_3_, attributes1_.id as id1_1_3_, attributes1_.id as id1_1_0_, attributes1_.artifact as artifact2_1_0_, attributes1_.attribute as attribut3_1_0_, attributes1_.name as name4_1_0_ from system systemx0_ left outer join system_attribute attributes1_ on systemx0_.id=attributes1_.SYSTEM_ID where systemx0_.id=?
+09:27:04,839 DEBUG org.hibernate.loader.collection.OneToManyLoader OneToManyLoader:82 - Static select for one-to-many com.kaanha.migrate.core.persistence.domain.SystemX.attributes: select attributes0_.SYSTEM_ID as SYSTEM5_0_1_, attributes0_.id as id1_1_1_, attributes0_.id as id1_1_0_, attributes0_.artifact as artifact2_1_0_, attributes0_.attribute as attribut3_1_0_, attributes0_.name as name4_1_0_ from system_attribute attributes0_ where attributes0_.SYSTEM_ID=?
+09:27:04,842 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:62 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@3b6ee868
+09:27:04,845 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:75 - Registering SessionFactory: 33f5e17e-75cf-4ba6-afa5-8e10713c9d44 (<unnamed>)
+09:27:04,846 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:82 - Not binding SessionFactory to JNDI, no JNDI name configured
+09:27:04,846 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:488 - Instantiated session factory
+09:27:04,852  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+09:27:04,852  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:193 - HHH000102: Fetching database metadata
+09:27:04,858  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:205 - HHH000396: Updating schema
+09:27:04,859 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3472 - Processing hbm.xml files
+09:27:04,859 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3502 - Process annotated classes
+09:27:04,860 DEBUG org.hibernate.cfg.Configuration Configuration:1420 - Processing fk mappings (*ToOne and JoinedSubclass)
+09:27:04,860 DEBUG org.hibernate.cfg.Configuration Configuration:1603 - Processing extends queue
+09:27:04,860 DEBUG org.hibernate.cfg.Configuration Configuration:1661 - Processing extends queue
+09:27:04,860 DEBUG org.hibernate.cfg.Configuration Configuration:1606 - Processing collection mappings
+09:27:04,861 DEBUG org.hibernate.cfg.Configuration Configuration:1616 - Processing native query and ResultSetMapping mappings
+09:27:04,861 DEBUG org.hibernate.cfg.Configuration Configuration:1624 - Processing association property references
+09:27:04,861 DEBUG org.hibernate.cfg.Configuration Configuration:1646 - Creating tables' unique integer identifiers
+09:27:04,861 DEBUG org.hibernate.cfg.Configuration Configuration:1647 - Processing foreign key constraints
+09:27:04,862 DEBUG org.hibernate.cfg.Configuration Configuration:1718 - Resolving reference to class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:27:04,968  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:65 - HHH000261: Table found: public.system
+09:27:04,970  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:66 - HHH000037: Columns: [id, name, version]
+09:27:04,970  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:68 - HHH000108: Foreign keys: []
+09:27:04,971  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:69 - HHH000126: Indexes: [uk_ecx7wvvt8obvifuqdw4kbpppy, system_pkey]
+09:27:05,047  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:65 - HHH000261: Table found: public.system_attribute
+09:27:05,048  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:66 - HHH000037: Columns: [id, artifact, name, system_id, attribute]
+09:27:05,048  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:68 - HHH000108: Foreign keys: [fk_8v8umg80ton8c8vbeb9uijsok]
+09:27:05,048  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:69 - HHH000126: Indexes: [system_attribute_pkey]
+09:27:05,049 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:27:05,049 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:27:05,050  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:242 - HHH000232: Schema update complete
+09:27:05,050 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:1068 - Checking 0 named HQL queries
+09:27:05,051 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:1091 - Checking 0 named SQL queries
+09:27:05,061 DEBUG org.hibernate.stat.internal.StatisticsInitiator StatisticsInitiator:110 - Statistics initialized [enabled=false]
+09:27:05,125 DEBUG org.hibernate.ejb.internal.EntityManagerFactoryRegistry EntityManagerFactoryRegistry:56 - Initializing EntityManagerFactoryRegistry : org.hibernate.ejb.internal.EntityManagerFactoryRegistry@161415c0
+09:27:05,125 DEBUG org.hibernate.ejb.internal.EntityManagerFactoryRegistry EntityManagerFactoryRegistry:66 - Registering EntityManagerFactory: migrate 
+09:27:05,452 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:265 - parse() - HQL: select systemX
+from com.kaanha.migrate.core.persistence.domain.SystemX systemX
+where systemX.name = ?1
+09:27:05,467 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:283 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  |  |  |  \-[IDENT] Node: 'kaanha'
+    |  |     |  |  |  |  |  \-[IDENT] Node: 'migrate'
+    |  |     |  |  |  |  \-[IDENT] Node: 'core'
+    |  |     |  |  |  \-[IDENT] Node: 'persistence'
+    |  |     |  |  \-[IDENT] Node: 'domain'
+    |  |     |  \-[IDENT] Node: 'SystemX'
+    |  |     \-[ALIAS] Node: 'systemX'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'systemX'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'systemX'
+          |  \-[IDENT] Node: 'name'
+          \-[PARAM] Node: '?'
+             \-[NUM_INT] Node: '1'
+
+09:27:05,467 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:27:05,500 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:121 - select << begin [level=1, statement=select]
+09:27:05,531 DEBUG org.hibernate.hql.internal.ast.tree.FromElement FromElement:157 - FromClause{level=1} : com.kaanha.migrate.core.persistence.domain.SystemX (systemX) -> systemx0_
+09:27:05,533 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX -> systemx0_.id
+09:27:05,536 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX -> systemx0_.id
+09:27:05,538 DEBUG org.hibernate.hql.internal.ast.tree.DotNode DotNode:599 - getDataType() : name -> org.hibernate.type.StringType@383d5802
+09:27:05,539 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX.name -> systemx0_.name
+09:27:05,543 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:125 - select : finishing up [level=1, statement=select]
+09:27:05,544 DEBUG org.hibernate.hql.internal.ast.HqlSqlWalker HqlSqlWalker:629 - processQuery() :  ( SELECT ( {select clause} systemx0_.id ) ( FromClause{level=1} system systemx0_ ) ( where ( = ( systemx0_.name systemx0_.id name ) ? ) ) )
+09:27:05,571 DEBUG org.hibernate.hql.internal.ast.util.JoinProcessor JoinProcessor:177 - Using FROM fragment [system systemx0_]
+09:27:05,572 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:129 - select >> end [level=1, statement=select]
+09:27:05,574 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:252 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (system)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'systemx0_.id as id1_0_' {alias=systemX, className=com.kaanha.migrate.core.persistence.domain.SystemX, tableAlias=systemx0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'systemx0_.name as name2_0_, systemx0_.version as version3_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[systemX], fromElementByTableAlias=[systemx0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'system systemx0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=systemX,role=null,tableName=system,tableAlias=systemx0_,origin=null,columns={,className=com.kaanha.migrate.core.persistence.domain.SystemX}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'systemx0_.name' {propertyName=name,dereferenceType=ALL,propertyPath=name,path=systemX.name,tableAlias=systemx0_,className=com.kaanha.migrate.core.persistence.domain.SystemX,classAlias=systemX}
+          |  +-[ALIAS_REF] IdentNode: 'systemx0_.id' {alias=systemX, className=com.kaanha.migrate.core.persistence.domain.SystemX, tableAlias=systemx0_}
+          |  \-[IDENT] IdentNode: 'name' {originalText=name}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=1, expectedType=org.hibernate.type.StringType@383d5802}
+
+09:27:05,574 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:27:05,602 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:235 - HQL: select systemX
+from com.kaanha.migrate.core.persistence.domain.SystemX systemX
+where systemX.name = ?1
+09:27:05,602 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:236 - SQL: select systemx0_.id as id1_0_, systemx0_.name as name2_0_, systemx0_.version as version3_0_ from system systemx0_ where systemx0_.name=?
+09:27:05,605 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:27:05,636 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger SQL:104 - 
+    select
+        systemx0_.id as id1_0_,
+        systemx0_.name as name2_0_,
+        systemx0_.version as version3_0_ 
+    from
+        system systemx0_ 
+    where
+        systemx0_.name=?
+09:27:05,638 DEBUG org.hibernate.engine.jdbc.internal.LogicalConnectionImpl LogicalConnectionImpl:212 - Obtaining JDBC connection
+09:27:05,638 DEBUG org.hibernate.engine.jdbc.internal.LogicalConnectionImpl LogicalConnectionImpl:218 - Obtained JDBC connection
+09:27:05,660 DEBUG org.hibernate.loader.Loader Loader:941 - Result set row: 0
+09:27:05,677 DEBUG org.hibernate.loader.Loader Loader:1475 - Result row: EntityKey[com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:27:05,727 DEBUG org.hibernate.engine.internal.TwoPhaseLoad TwoPhaseLoad:158 - Resolving associations for [com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:27:05,764 DEBUG org.hibernate.engine.internal.TwoPhaseLoad TwoPhaseLoad:277 - Done materializing entity [com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:27:05,765 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:22 - connectTarget
+09:35:56,126  INFO org.springframework.context.support.AbstractApplicationContext XmlWebApplicationContext:1042 - Closing WebApplicationContext for namespace 'mycart-servlet': startup date [Fri Sep 06 09:26:59 EDT 2013]; root of context hierarchy
+09:35:56,150  INFO org.springframework.beans.factory.support.DefaultSingletonBeanRegistry DefaultListableBeanFactory:444 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@51a10b2b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cartService,connectAction,homeController,migrationService,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,viewResolver,flowController,flowExecutor,flowRegistry,org.springframework.binding.convert.service.DefaultConversionService#0,org.springframework.webflow.expression.spel.WebFlowSpringELExpressionParser#0,flowBuilderServices,viewFactoryCreator,migrationRequest,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+09:35:56,152  INFO org.springframework.context.support.AbstractApplicationContext GenericWebApplicationContext:1042 - Closing Flow ApplicationContext [home]: startup date [Fri Sep 06 09:27:00 EDT 2013]; parent: WebApplicationContext for namespace 'mycart-servlet'
+09:35:56,154  INFO org.springframework.beans.factory.support.DefaultSingletonBeanRegistry DefaultListableBeanFactory:444 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@47fb8997: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@51a10b2b
+09:36:27,301  INFO org.springframework.web.servlet.FrameworkServlet DispatcherServlet:454 - FrameworkServlet 'mycart': initialization started
+09:36:27,336  INFO org.springframework.context.support.AbstractApplicationContext XmlWebApplicationContext:510 - Refreshing WebApplicationContext for namespace 'mycart-servlet': startup date [Fri Sep 06 09:36:27 EDT 2013]; root of context hierarchy
+09:36:27,384  INFO org.springframework.beans.factory.xml.XmlBeanDefinitionReader XmlBeanDefinitionReader:315 - Loading XML bean definitions from ServletContext resource [/WEB-INF/mycart-servlet.xml]
+09:36:27,586  INFO org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider ClassPathBeanDefinitionScanner:231 - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+09:36:27,588  INFO org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider ClassPathBeanDefinitionScanner:239 - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+09:36:27,762  INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor AutowiredAnnotationBeanPostProcessor:140 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+09:36:27,777  INFO org.springframework.beans.factory.support.DefaultListableBeanFactory DefaultListableBeanFactory:598 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6c515139: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cartService,connectAction,homeController,migrationService,org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,viewResolver,flowController,flowExecutor,flowRegistry,org.springframework.binding.convert.service.DefaultConversionService#0,org.springframework.webflow.expression.spel.WebFlowSpringELExpressionParser#0,flowBuilderServices,viewFactoryCreator,migrationRequest,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+09:36:27,885  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping DefaultAnnotationHandlerMapping:315 - Mapped URL path [/homes.do] onto handler 'homeController'
+09:36:28,169  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/account/login.do] onto handler 'flowController'
+09:36:28,169  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/checkout.do] onto handler 'flowController'
+09:36:28,169  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/home.do] onto handler 'flowController'
+09:36:28,170  INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping SimpleUrlHandlerMapping:315 - Mapped URL path [/account/register.do] onto handler 'flowController'
+09:36:28,543  INFO org.springframework.web.servlet.FrameworkServlet DispatcherServlet:473 - FrameworkServlet 'mycart': initialization completed in 1239 ms
+09:36:28,683  INFO org.springframework.context.support.AbstractApplicationContext GenericWebApplicationContext:510 - Refreshing Flow ApplicationContext [home]: startup date [Fri Sep 06 09:36:28 EDT 2013]; parent: WebApplicationContext for namespace 'mycart-servlet'
+09:36:28,688  INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor AutowiredAnnotationBeanPostProcessor:140 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+09:36:28,691  INFO org.springframework.beans.factory.support.DefaultListableBeanFactory DefaultListableBeanFactory:598 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@794e5dc: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@6c515139
+09:36:33,434 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:17 - connectSource
+09:36:33,724 DEBUG org.hibernate.ejb.Ejb3Configuration logging:144 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+09:36:33,769 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:33,770 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:33,770 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:33,772 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3950a7b2
+09:36:33,773 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@5c9848be
+09:36:33,774 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@7707a02c
+09:36:33,777 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:33,777 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:33,778 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:33,779 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@1f55ffca
+09:36:33,780 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@1f55ffca
+09:36:33,780 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1f55ffca
+09:36:33,783 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@7155eed0
+09:36:33,785 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@7155eed0
+09:36:33,785 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7155eed0
+09:36:33,787 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:33,788 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:33,789 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:33,791 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:33,792 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:33,792 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:33,794 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@2363f245
+09:36:33,795 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@2363f245
+09:36:33,795 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2363f245
+09:36:33,797 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:33,798 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:33,798 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:33,800 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@54412284
+09:36:33,801 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@54412284
+09:36:33,803 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@1cacd9d4
+09:36:33,805 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@1cacd9d4
+09:36:33,807 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@18116d8c
+09:36:33,807 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@18116d8c
+09:36:33,809 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@3b17af6e
+09:36:33,810 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@60913983
+09:36:33,811 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@66f163b2
+09:36:33,813 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@66f163b2
+09:36:33,815 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@661be6cb
+09:36:33,815 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@661be6cb
+09:36:33,818 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@e111951
+09:36:33,819 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@e111951
+09:36:33,821 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@5ff9c64
+09:36:33,822 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5ff9c64
+09:36:33,823 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5ff9c64
+09:36:33,826 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5543812f
+09:36:33,829 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@16332648
+09:36:33,829 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@16332648
+09:36:33,834 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@16332648
+09:36:33,835 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@75463b98
+09:36:33,837 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@5830a6b2
+09:36:33,838 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@5830a6b2
+09:36:33,840 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@27fcea34
+09:36:33,841 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@27fcea34
+09:36:33,843 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@14f61c40
+09:36:33,845 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@14f61c40
+09:36:33,847 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@1aae03c0
+09:36:33,848 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1aae03c0
+09:36:33,850 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@409e4935
+09:36:33,850 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@409e4935
+09:36:33,851 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@13c6472
+09:36:33,852 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@1e87db95
+09:36:33,854 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@30f2ea17
+09:36:33,854 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@30f2ea17
+09:36:33,855 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@30f2ea17
+09:36:33,856 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:33,856 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:33,857 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:33,858 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@189f620
+09:36:33,859 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@93aa50f
+09:36:33,860 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@93aa50f
+09:36:33,860 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@93aa50f
+09:36:33,862 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:33,863 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:33,863 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:33,865 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@ceb3b58
+09:36:33,866 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@8217877
+09:36:33,871 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@588d83bc
+09:36:33,871 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@588d83bc
+09:36:33,872 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7731dc94
+09:36:33,876 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@8ceeaf7
+09:36:33,877 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@8ceeaf7
+09:36:33,882 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@4239899a
+09:36:33,882 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@4239899a
+09:36:33,886 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@24574046
+09:36:33,887 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@4c032531
+09:36:33,889 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@43a386f6
+09:36:33,900 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@43dc2314
+09:36:33,901 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@43dc2314
+09:36:33,902 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5e0079f5
+09:36:33,903 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7146f409
+09:36:33,907 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@693fb4f8
+09:36:33,908 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@55823bc3
+09:36:33,909 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5921ab10
+09:36:33,909 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3165d527
+09:36:33,910 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@148d0cc7
+09:36:33,910 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@3841e75b
+09:36:33,936  INFO org.hibernate.annotations.common.Version Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+09:36:33,952  INFO org.hibernate.Version Version:41 - HHH000412: Hibernate Core {4.2.2.Final}
+09:36:33,959  INFO org.hibernate.cfg.Environment Environment:239 - HHH000206: hibernate.properties not found
+09:36:33,961  INFO org.hibernate.cfg.Environment Environment:342 - HHH000021: Bytecode provider name : javassist
+09:36:33,979 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+09:36:33,980 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+09:36:33,981 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+09:36:33,982 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+09:36:33,984 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+09:36:33,985 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+09:36:33,987 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+09:36:33,988 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+09:36:33,989 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+09:36:33,990 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+09:36:33,992 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+09:36:33,995 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+09:36:34,000 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+09:36:34,007 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+09:36:34,009 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+09:36:34,025 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:34,025 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:34,026 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@62c486e8
+09:36:34,029 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3950a7b2
+09:36:34,031 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@5c9848be
+09:36:34,032 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@7707a02c
+09:36:34,035 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:34,036 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:34,038 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7fd9b89a
+09:36:34,039 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@1f55ffca
+09:36:34,040 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@1f55ffca
+09:36:34,040 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1f55ffca
+09:36:34,041 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@7155eed0
+09:36:34,041 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@7155eed0
+09:36:34,042 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7155eed0
+09:36:34,042 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:34,042 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:34,043 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@74d2a0dc
+09:36:34,043 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:34,044 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:34,044 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@6ef1e6d1
+09:36:34,044 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@2363f245
+09:36:34,046 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@2363f245
+09:36:34,047 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2363f245
+09:36:34,047 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:34,048 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:34,048 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@5fe4e6c2
+09:36:34,048 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@54412284
+09:36:34,049 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@54412284
+09:36:34,049 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@1cacd9d4
+09:36:34,049 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@1cacd9d4
+09:36:34,050 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@18116d8c
+09:36:34,050 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@18116d8c
+09:36:34,051 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@3b17af6e
+09:36:34,051 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@60913983
+09:36:34,052 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@66f163b2
+09:36:34,052 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@66f163b2
+09:36:34,052 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@661be6cb
+09:36:34,053 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@661be6cb
+09:36:34,053 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@e111951
+09:36:34,053 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@e111951
+09:36:34,054 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@5ff9c64
+09:36:34,054 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5ff9c64
+09:36:34,054 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5ff9c64
+09:36:34,055 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5543812f
+09:36:34,055 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@16332648
+09:36:34,055 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@16332648
+09:36:34,056 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@16332648
+09:36:34,056 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@75463b98
+09:36:34,056 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@5830a6b2
+09:36:34,057 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@5830a6b2
+09:36:34,057 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@27fcea34
+09:36:34,058 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@27fcea34
+09:36:34,058 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@14f61c40
+09:36:34,058 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@14f61c40
+09:36:34,059 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@1aae03c0
+09:36:34,059 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1aae03c0
+09:36:34,060 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@409e4935
+09:36:34,060 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@409e4935
+09:36:34,061 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@13c6472
+09:36:34,062 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@1e87db95
+09:36:34,063 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@30f2ea17
+09:36:34,064 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@30f2ea17
+09:36:34,065 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@30f2ea17
+09:36:34,065 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:34,066 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:34,066 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@50960a83
+09:36:34,067 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@189f620
+09:36:34,067 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@93aa50f
+09:36:34,067 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@93aa50f
+09:36:34,068 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@93aa50f
+09:36:34,068 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:34,069 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:34,070 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@6bd5dc3f
+09:36:34,070 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@ceb3b58
+09:36:34,070 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@8217877
+09:36:34,071 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@588d83bc
+09:36:34,071 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@588d83bc
+09:36:34,072 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7731dc94
+09:36:34,072 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@8ceeaf7
+09:36:34,072 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@8ceeaf7
+09:36:34,073 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@4239899a
+09:36:34,073 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@4239899a
+09:36:34,074 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@24574046
+09:36:34,074 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@4c032531
+09:36:34,075 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@43a386f6
+09:36:34,076 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@43dc2314
+09:36:34,076 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@43dc2314
+09:36:34,077 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d0310a2
+09:36:34,077 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@54393bcc
+09:36:34,078 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@7984f946
+09:36:34,078 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@909a0fe
+09:36:34,079 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@57288854
+09:36:34,079 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@260e6f80
+09:36:34,080 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@7dba5004
+09:36:34,080 DEBUG org.hibernate.type.BasicTypeRegistry BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@52db7718
+09:36:34,081 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+09:36:34,081 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+09:36:34,082 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+09:36:34,082 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+09:36:34,083 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+09:36:34,084 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+09:36:34,085 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+09:36:34,088 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+09:36:34,089 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+09:36:34,090 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+09:36:34,090 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+09:36:34,091 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+09:36:34,091 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+09:36:34,092 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+09:36:34,093 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+09:36:34,093 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:316 - Look up for persistence unit: migrate
+09:36:34,145 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:851 - Detect class: true; detect hbm: true
+09:36:34,160 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:126 - Searching mapped entities in jar/par: file:/Users/Harsh/.m2/repository/com/kaanha/migrate-core/0.0.1-SNAPSHOT/migrate-core-0.0.1-SNAPSHOT.jar
+09:36:34,161 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraEngine
+09:36:34,189 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraTransformationEngine$1
+09:36:34,192 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.RallyToJiraTransformationEngine
+09:36:34,198 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.engine.TransformationEngine
+09:36:34,199 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.metadata.JIRAMetadataReader
+09:36:34,200 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.core.migrate.metadata.RallyMetadataReader
+09:36:34,203 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.JiraRestApi
+09:36:34,204 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.JiraWriteApi
+09:36:34,205 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RallyReadApi
+09:36:34,209 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RallyRestApi
+09:36:34,213 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.api.rest.RestApi
+09:36:34,214 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.App
+09:36:34,215 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.api.DBRepository
+09:36:34,218 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.ArtifactType
+09:36:34,219 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.AttributeType
+09:36:34,220 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.Persistable
+09:36:34,241 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.Persistable
+09:36:34,242 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QPersistable
+09:36:34,243 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QSystemAttribute
+09:36:34,244 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.QSystemX
+09:36:34,245 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:36:34,249 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:36:34,250 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:172 - Filtering: com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:34,252 DEBUG org.hibernate.ejb.packaging.AbstractJarVisitor AbstractJarVisitor:223 - Java element filter matched for com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:34,260 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:851 - Detect class: true; detect hbm: true
+09:36:34,261 DEBUG org.hibernate.ejb.Ejb3Configuration Ejb3Configuration:205 - Creating Factory: migrate
+09:36:34,277 DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+09:36:34,277 DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.ejb.event.JpaIntegrator].
+09:36:34,312 DEBUG org.hibernate.ejb.util.NamingHelper NamingHelper:50 - No JNDI name configured for binding Ejb3Configuration
+09:36:34,333 DEBUG org.hibernate.cfg.Configuration Configuration:1753 - Preparing to build session factory with filters : {}
+09:36:34,346  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+09:36:34,353  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 20
+09:36:34,354  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+09:36:34,355  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/migrate]
+09:36:34,355  INFO org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:154 - HHH000046: Connection properties: {user=postgres, password=postgres, autocommit=true, release_mode=auto}
+09:36:34,385 DEBUG org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:196 - Opening new JDBC connection
+09:36:34,482 DEBUG org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl DriverManagerConnectionProviderImpl:219 - Created connection to: jdbc:postgresql://localhost:5432/migrate, Isolation Level: 2
+09:36:34,491 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:121 - Database ->
+       name : PostgreSQL
+    version : 9.2.4
+      major : 9
+      minor : 2
+09:36:34,493 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:127 - Driver ->
+       name : PostgreSQL Native Driver
+    version : PostgreSQL 9.0 JDBC4 (build 801)
+      major : 9
+      minor : 0
+09:36:34,493 DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl JdbcServicesImpl:133 - JDBC version : 4.0
+09:36:34,713  INFO org.hibernate.dialect.Dialect Dialect:130 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:36:34,736  INFO org.hibernate.engine.jdbc.internal.LobCreatorBuilder LobCreatorBuilder:120 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:36:34,922 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3472 - Processing hbm.xml files
+09:36:34,923 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3502 - Process annotated classes
+09:36:34,947 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:532 - Binding entity from annotated class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:34,972 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+09:36:34,974 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:990 - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+09:36:34,982 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:394 - Import with entity name system
+09:36:34,985 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:564 - Bind entity com.kaanha.migrate.core.persistence.domain.SystemX on table system
+09:36:35,073 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=id, insertable=true, updatable=true, unique=false}
+09:36:35,086 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+09:36:35,093 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for id
+09:36:35,095 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property id
+09:36:35,099 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='SYSTEM_ID', referencedColumn='ID', mappedBy=''}
+09:36:35,100 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=attributes, insertable=true, updatable=true, unique=false}
+09:36:35,102 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=null, insertable=true, updatable=true, unique=false}
+09:36:35,115 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=element, insertable=true, updatable=true, unique=false}
+09:36:35,117 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=attributes_KEY, insertable=true, updatable=true, unique=false}
+09:36:35,118 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='attributes_KEY', referencedColumn='null', mappedBy='null'}
+09:36:35,120 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+09:36:35,121 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy=''}
+09:36:35,122 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:400 - Collection role: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:36:35,127 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property attributes
+09:36:35,128 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=name, insertable=true, updatable=true, unique=false}
+09:36:35,128 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property name with lazy=false
+09:36:35,129 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for name
+09:36:35,129 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property name
+09:36:35,130 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system), mappingColumn=version, insertable=true, updatable=true, unique=false}
+09:36:35,131 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property version with lazy=false
+09:36:35,131 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for version
+09:36:35,132 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property version
+09:36:35,133 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:532 - Binding entity from annotated class: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:36:35,134 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+09:36:35,134 DEBUG org.hibernate.cfg.AnnotationBinder AnnotationBinder:990 - No value specified for 'javax.persistence.sharedCache.mode'; using UNSPECIFIED
+09:36:35,135 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:394 - Import with entity name SystemAttribute
+09:36:35,135 DEBUG org.hibernate.cfg.annotations.EntityBinder EntityBinder:564 - Bind entity com.kaanha.migrate.core.persistence.domain.SystemAttribute on table system_attribute
+09:36:35,139 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=id, insertable=true, updatable=true, unique=false}
+09:36:35,140 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+09:36:35,140 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for id
+09:36:35,141 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property id
+09:36:35,141 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=artifact, insertable=true, updatable=true, unique=false}
+09:36:35,142 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property artifact with lazy=false
+09:36:35,144 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for artifact
+09:36:35,145 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property artifact
+09:36:35,145 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=attribute, insertable=true, updatable=true, unique=false}
+09:36:35,146 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property attribute with lazy=false
+09:36:35,149 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for attribute
+09:36:35,149 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property attribute
+09:36:35,149 DEBUG org.hibernate.cfg.Ejb3Column Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(system_attribute), mappingColumn=name, insertable=true, updatable=true, unique=false}
+09:36:35,150 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:179 - MetadataSourceProcessor property name with lazy=false
+09:36:35,150 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:331 - building SimpleValue for name
+09:36:35,151 DEBUG org.hibernate.cfg.annotations.PropertyBinder PropertyBinder:260 - Building property name
+09:36:35,151 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for id
+09:36:35,152 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for name
+09:36:35,152 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for version
+09:36:35,152 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for id
+09:36:35,153 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for artifact
+09:36:35,153 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for attribute
+09:36:35,153 DEBUG org.hibernate.cfg.annotations.SimpleValueBinder SimpleValueBinder:369 - Setting SimpleValue typeName for name
+09:36:35,154 DEBUG org.hibernate.cfg.Configuration Configuration:1420 - Processing fk mappings (*ToOne and JoinedSubclass)
+09:36:35,156 DEBUG org.hibernate.cfg.Configuration Configuration:1603 - Processing extends queue
+09:36:35,156 DEBUG org.hibernate.cfg.Configuration Configuration:1661 - Processing extends queue
+09:36:35,156 DEBUG org.hibernate.cfg.Configuration Configuration:1606 - Processing collection mappings
+09:36:35,157 DEBUG org.hibernate.cfg.CollectionSecondPass CollectionSecondPass:66 - Second pass for collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:36:35,157 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:761 - Binding a OneToMany: com.kaanha.migrate.core.persistence.domain.SystemX.attributes through a foreign key
+09:36:35,158 DEBUG org.hibernate.cfg.annotations.CollectionBinder CollectionBinder:790 - Mapping collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes -> system_attribute
+09:36:35,161 DEBUG org.hibernate.cfg.CollectionSecondPass CollectionSecondPass:83 - Mapped collection key: SYSTEM_ID, one-to-many: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:36:35,162 DEBUG org.hibernate.cfg.Configuration Configuration:1616 - Processing native query and ResultSetMapping mappings
+09:36:35,162 DEBUG org.hibernate.cfg.Configuration Configuration:1624 - Processing association property references
+09:36:35,162 DEBUG org.hibernate.cfg.Configuration Configuration:1646 - Creating tables' unique integer identifiers
+09:36:35,162 DEBUG org.hibernate.cfg.Configuration Configuration:1647 - Processing foreign key constraints
+09:36:35,163 DEBUG org.hibernate.cfg.Configuration Configuration:1718 - Resolving reference to class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:35,175 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:114 - Automatic flush during beforeCompletion(): disabled
+09:36:35,175 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:120 - Automatic session close at end of transaction: disabled
+09:36:35,175 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:131 - JDBC batch size: 15
+09:36:35,176 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:137 - JDBC batch updates for versioned data: disabled
+09:36:35,176 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:147 - Scrollable result sets: enabled
+09:36:35,176 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:153 - Wrap result sets: disabled
+09:36:35,177 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:159 - JDBC3 getGeneratedKeys(): enabled
+09:36:35,177 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:171 - multi-tenancy strategy : NONE
+09:36:35,177 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:177 - Connection release mode: auto
+09:36:35,178  INFO org.hibernate.engine.transaction.internal.TransactionFactoryInitiator TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+09:36:35,181 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:199 - Using BatchFetchStyle : LEGACY
+09:36:35,181 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:224 - Default batch fetch size: 1
+09:36:35,182 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:230 - Generate SQL with comments: disabled
+09:36:35,182 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:236 - Order SQL updates by primary key: disabled
+09:36:35,182 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:242 - Order SQL inserts for batching: disabled
+09:36:35,183 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:250 - Default null ordering: none
+09:36:35,184 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:541 - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+09:36:35,187  INFO org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+09:36:35,200 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:260 - Query language substitutions: {}
+09:36:35,201 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:266 - JPA-QL strict compliance: enabled
+09:36:35,201 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:274 - Second-level cache: enabled
+09:36:35,202 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:280 - Query cache: disabled
+09:36:35,202 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:481 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+09:36:35,204 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:491 - org.hibernate.cache.internal.NoCachingRegionFactory did not provide constructor accepting java.util.Properties; attempting no-arg constructor.
+09:36:35,204 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:295 - Optimize cache for minimal puts: disabled
+09:36:35,205 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:310 - Structured second-level cache entries: disabled
+09:36:35,208 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:320 - Second-level cache direct-reference entries: disabled
+09:36:35,212 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:328 - Statistics: disabled
+09:36:35,212 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:334 - Deleted entity synthetic identifier rollback: disabled
+09:36:35,213 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:358 - Default entity-mode: pojo
+09:36:35,215 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:364 - Named query checking : enabled
+09:36:35,216 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:370 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+09:36:35,216 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:388 - Allow initialization of lazy state outside session : : disabled
+09:36:35,217 DEBUG org.hibernate.cfg.SettingsFactory SettingsFactory:398 - JTA Track by Thread: enabled
+09:36:35,278 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:225 - Building session factory
+09:36:35,295 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:277 - Session factory constructed with filter configurations : {}
+09:36:35,296 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:278 - Instantiating session factory with properties: {java.vendor=Oracle Corporation, sun.java.launcher=SUN_STANDARD, hibernate.connection.url=jdbc:postgresql://localhost:5432/migrate, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.ejb.discard_pc_on_close=false, hibernate.transaction.flush_before_completion=false, os.name=Mac OS X, sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/classes, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.7.0_25-b15, hibernate.connection.autocommit=true, user.name=Harsh, guice.disable.misplaced.annotation.check=true, hibernate.connection.release_mode=auto, user.language=en, sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib, classworlds.conf=/Users/Harsh/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf1735116067862249032.tmp, java.version=1.7.0_25, user.timezone=America/New_York, sun.arch.data.model=64, http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/endorsed, sun.cpu.isalist=, sun.jnu.encoding=US-ASCII, file.encoding.pkg=sun.io, file.separator=/, java.specification.name=Java Platform API Specification, hibernate.format_sql=true, java.class.version=51.0, user.country=US, java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre, java.vm.info=mixed mode, os.version=10.8.4, hibernate.transaction.factory_class=org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory, hibernate.query.jpaql_strict_compliance=true, path.separator=:, java.vm.version=23.25-b01, hibernate.connection.password=postgres, java.awt.printerjob=sun.lwawt.macosx.CPrinterJob, sun.io.unicode.encoding=UnicodeBig, awt.toolkit=sun.lwawt.macosx.LWCToolkit, hibernate.connection.username=postgres, socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, user.home=/Users/Harsh, java.specification.vendor=Oracle Corporation, hibernate.hbm2ddl.auto=update, java.library.path=/Users/Harsh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., java.vendor.url=http://java.oracle.com/, hibernate.connection.driver_class=org.postgresql.Driver, java.vm.vendor=Oracle Corporation, gopherProxySet=false, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, maven.home=/Users/Harsh/git/migrate/migrate-web/EMBEDDED, java.runtime.name=Java(TM) SE Runtime Environment, hibernate.archive.autodetection=class, hbm, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher -B -s /Users/Harsh/.m2/settings.xml jetty:run, java.class.path=/Users/Harsh/Documents/DevTools/eclipse/configuration/org.eclipse.osgi/bundles/266/1/.cp/jars/plexus-classworlds-2.4.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.name=Java Virtual Machine Specification, java.vm.specification.version=1.7, sun.cpu.endian=little, javax.persistence.jdbc.driver=org.postgresql.Driver, sun.os.patch.level=unknown, java.io.tmpdir=/var/folders/wp/r_m0snn94bd2zq88p72zz0700000gn/T/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, os.arch=x86_64, java.awt.graphicsenv=sun.awt.CGraphicsEnvironment, java.ext.dirs=/Users/Harsh/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java, user.dir=/Users/Harsh/git/migrate/migrate-web, line.separator=
+, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding=US-ASCII, hibernate.use_identifier_rollback=false, java.specification.version=1.7, maven.bootclasspath=/Users/Harsh/Documents/DevTools/eclipse/configuration/org.eclipse.osgi/bundles/266/1/.cp/jars/plexus-classworlds-2.4.jar, hibernate.show_sql=false}
+09:36:35,333 DEBUG org.hibernate.cfg.beanvalidation.TypeSafeActivator TypeSafeActivator:106 - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+09:36:35,439 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:36:35,440 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:36:35,537 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3592 - Static SQL for entity: com.kaanha.migrate.core.persistence.domain.SystemAttribute
+09:36:35,538 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3597 -  Version select: select id from system_attribute where id =?
+09:36:35,538 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3600 -  Snapshot select: select systemattr_.id, systemattr_.artifact as artifact2_1_, systemattr_.attribute as attribut3_1_, systemattr_.name as name4_1_ from system_attribute systemattr_ where systemattr_.id=?
+09:36:35,539 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3603 -  Insert 0: insert into system_attribute (artifact, attribute, name, id) values (?, ?, ?, ?)
+09:36:35,539 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3604 -  Update 0: update system_attribute set artifact=?, attribute=?, name=? where id=?
+09:36:35,539 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3605 -  Delete 0: delete from system_attribute where id=?
+09:36:35,550 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3592 - Static SQL for entity: com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:35,550 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3597 -  Version select: select id from system where id =?
+09:36:35,551 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3600 -  Snapshot select: select systemx_.id, systemx_.name as name2_0_, systemx_.version as version3_0_ from system systemx_ where systemx_.id=?
+09:36:35,551 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3603 -  Insert 0: insert into system (name, version, id) values (?, ?, ?)
+09:36:35,552 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3604 -  Update 0: update system set name=?, version=? where id=?
+09:36:35,552 DEBUG org.hibernate.persister.entity.AbstractEntityPersister AbstractEntityPersister:3605 -  Delete 0: delete from system where id=?
+09:36:35,571 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:665 - Static SQL for collection: com.kaanha.migrate.core.persistence.domain.SystemX.attributes
+09:36:35,573 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:666 -  Row insert: update system_attribute set SYSTEM_ID=? where id=?
+09:36:35,573 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:667 -  Row update: update system_attribute set  where id=?
+09:36:35,573 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:668 -  Row delete: update system_attribute set SYSTEM_ID=null where SYSTEM_ID=? and id=?
+09:36:35,574 DEBUG org.hibernate.persister.collection.AbstractCollectionPersister AbstractCollectionPersister:669 -  One-shot delete: update system_attribute set SYSTEM_ID=null where SYSTEM_ID=?
+09:36:35,601 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [NONE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,602 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [READ]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,603 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [UPGRADE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update
+09:36:35,604 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [UPGRADE_NOWAIT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:36:35,606 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [FORCE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:36:35,607 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_READ]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for share
+09:36:35,608 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_WRITE]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update
+09:36:35,608 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [PESSIMISTIC_FORCE_INCREMENT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=? for update nowait 
+09:36:35,609 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [OPTIMISTIC]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,609 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemAttribute [OPTIMISTIC_FORCE_INCREMENT]: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,616 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_MERGE on entity com.kaanha.migrate.core.persistence.domain.SystemAttribute: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,617 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_REFRESH on entity com.kaanha.migrate.core.persistence.domain.SystemAttribute: select systemattr0_.id as id1_1_0_, systemattr0_.artifact as artifact2_1_0_, systemattr0_.attribute as attribut3_1_0_, systemattr0_.name as name4_1_0_ from system_attribute systemattr0_ where systemattr0_.id=?
+09:36:35,618 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [NONE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:36:35,618 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [READ]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:36:35,619 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [UPGRADE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update
+09:36:35,619 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [UPGRADE_NOWAIT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:36:35,620 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [FORCE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:36:35,620 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_READ]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for share
+09:36:35,621 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_WRITE]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update
+09:36:35,621 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [PESSIMISTIC_FORCE_INCREMENT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=? for update nowait 
+09:36:35,622 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [OPTIMISTIC]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:36:35,622 DEBUG org.hibernate.loader.entity.EntityLoader Loader:123 - Static select for entity com.kaanha.migrate.core.persistence.domain.SystemX [OPTIMISTIC_FORCE_INCREMENT]: select systemx0_.id as id1_0_0_, systemx0_.name as name2_0_0_, systemx0_.version as version3_0_0_ from system systemx0_ where systemx0_.id=?
+09:36:35,626 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_MERGE on entity com.kaanha.migrate.core.persistence.domain.SystemX: select systemx0_.id as id1_0_1_, systemx0_.name as name2_0_1_, systemx0_.version as version3_0_1_, attributes1_.SYSTEM_ID as SYSTEM5_0_3_, attributes1_.id as id1_1_3_, attributes1_.id as id1_1_0_, attributes1_.artifact as artifact2_1_0_, attributes1_.attribute as attribut3_1_0_, attributes1_.name as name4_1_0_ from system systemx0_ left outer join system_attribute attributes1_ on systemx0_.id=attributes1_.SYSTEM_ID where systemx0_.id=?
+09:36:35,627 DEBUG org.hibernate.loader.entity.CascadeEntityLoader Loader:56 - Static select for action ACTION_REFRESH on entity com.kaanha.migrate.core.persistence.domain.SystemX: select systemx0_.id as id1_0_1_, systemx0_.name as name2_0_1_, systemx0_.version as version3_0_1_, attributes1_.SYSTEM_ID as SYSTEM5_0_3_, attributes1_.id as id1_1_3_, attributes1_.id as id1_1_0_, attributes1_.artifact as artifact2_1_0_, attributes1_.attribute as attribut3_1_0_, attributes1_.name as name4_1_0_ from system systemx0_ left outer join system_attribute attributes1_ on systemx0_.id=attributes1_.SYSTEM_ID where systemx0_.id=?
+09:36:35,632 DEBUG org.hibernate.loader.collection.OneToManyLoader OneToManyLoader:82 - Static select for one-to-many com.kaanha.migrate.core.persistence.domain.SystemX.attributes: select attributes0_.SYSTEM_ID as SYSTEM5_0_1_, attributes0_.id as id1_1_1_, attributes0_.id as id1_1_0_, attributes0_.artifact as artifact2_1_0_, attributes0_.attribute as attribut3_1_0_, attributes0_.name as name4_1_0_ from system_attribute attributes0_ where attributes0_.SYSTEM_ID=?
+09:36:35,636 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:62 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@5e932812
+09:36:35,639 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:75 - Registering SessionFactory: deb085de-19f0-4136-a45e-3277547bf066 (<unnamed>)
+09:36:35,639 DEBUG org.hibernate.internal.SessionFactoryRegistry SessionFactoryRegistry:82 - Not binding SessionFactory to JNDI, no JNDI name configured
+09:36:35,640 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:488 - Instantiated session factory
+09:36:35,648  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+09:36:35,649  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:193 - HHH000102: Fetching database metadata
+09:36:35,659  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:205 - HHH000396: Updating schema
+09:36:35,660 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3472 - Processing hbm.xml files
+09:36:35,660 DEBUG org.hibernate.cfg.Configuration$MetadataSourceQueue Configuration:3502 - Process annotated classes
+09:36:35,661 DEBUG org.hibernate.cfg.Configuration Configuration:1420 - Processing fk mappings (*ToOne and JoinedSubclass)
+09:36:35,661 DEBUG org.hibernate.cfg.Configuration Configuration:1603 - Processing extends queue
+09:36:35,661 DEBUG org.hibernate.cfg.Configuration Configuration:1661 - Processing extends queue
+09:36:35,661 DEBUG org.hibernate.cfg.Configuration Configuration:1606 - Processing collection mappings
+09:36:35,662 DEBUG org.hibernate.cfg.Configuration Configuration:1616 - Processing native query and ResultSetMapping mappings
+09:36:35,662 DEBUG org.hibernate.cfg.Configuration Configuration:1624 - Processing association property references
+09:36:35,662 DEBUG org.hibernate.cfg.Configuration Configuration:1646 - Creating tables' unique integer identifiers
+09:36:35,663 DEBUG org.hibernate.cfg.Configuration Configuration:1647 - Processing foreign key constraints
+09:36:35,664 DEBUG org.hibernate.cfg.Configuration Configuration:1718 - Resolving reference to class: com.kaanha.migrate.core.persistence.domain.SystemX
+09:36:35,770  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:65 - HHH000261: Table found: public.system
+09:36:35,770  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:66 - HHH000037: Columns: [id, name, version]
+09:36:35,771  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:68 - HHH000108: Foreign keys: []
+09:36:35,771  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:69 - HHH000126: Indexes: [uk_ecx7wvvt8obvifuqdw4kbpppy, system_pkey]
+09:36:35,851  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:65 - HHH000261: Table found: public.system_attribute
+09:36:35,851  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:66 - HHH000037: Columns: [id, artifact, name, system_id, attribute]
+09:36:35,852  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:68 - HHH000108: Foreign keys: [fk_8v8umg80ton8c8vbeb9uijsok]
+09:36:35,852  INFO org.hibernate.tool.hbm2ddl.TableMetadata TableMetadata:69 - HHH000126: Indexes: [system_attribute_pkey]
+09:36:35,853 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:36:35,853 DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.PostgreSQLDialect]
+09:36:35,853  INFO org.hibernate.tool.hbm2ddl.SchemaUpdate SchemaUpdate:242 - HHH000232: Schema update complete
+09:36:35,854 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:1068 - Checking 0 named HQL queries
+09:36:35,854 DEBUG org.hibernate.internal.SessionFactoryImpl SessionFactoryImpl:1091 - Checking 0 named SQL queries
+09:36:35,863 DEBUG org.hibernate.stat.internal.StatisticsInitiator StatisticsInitiator:110 - Statistics initialized [enabled=false]
+09:36:35,931 DEBUG org.hibernate.ejb.internal.EntityManagerFactoryRegistry EntityManagerFactoryRegistry:56 - Initializing EntityManagerFactoryRegistry : org.hibernate.ejb.internal.EntityManagerFactoryRegistry@3c2967f3
+09:36:35,932 DEBUG org.hibernate.ejb.internal.EntityManagerFactoryRegistry EntityManagerFactoryRegistry:66 - Registering EntityManagerFactory: migrate 
+09:36:36,247 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:265 - parse() - HQL: select systemX
+from com.kaanha.migrate.core.persistence.domain.SystemX systemX
+where systemX.name = ?1
+09:36:36,263 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:283 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'from'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  |  |  |  \-[IDENT] Node: 'kaanha'
+    |  |     |  |  |  |  |  \-[IDENT] Node: 'migrate'
+    |  |     |  |  |  |  \-[IDENT] Node: 'core'
+    |  |     |  |  |  \-[IDENT] Node: 'persistence'
+    |  |     |  |  \-[IDENT] Node: 'domain'
+    |  |     |  \-[IDENT] Node: 'SystemX'
+    |  |     \-[ALIAS] Node: 'systemX'
+    |  \-[SELECT] Node: 'select'
+    |     \-[IDENT] Node: 'systemX'
+    \-[WHERE] Node: 'where'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'systemX'
+          |  \-[IDENT] Node: 'name'
+          \-[PARAM] Node: '?'
+             \-[NUM_INT] Node: '1'
+
+09:36:36,264 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:36:36,293 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:121 - select << begin [level=1, statement=select]
+09:36:36,331 DEBUG org.hibernate.hql.internal.ast.tree.FromElement FromElement:157 - FromClause{level=1} : com.kaanha.migrate.core.persistence.domain.SystemX (systemX) -> systemx0_
+09:36:36,334 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX -> systemx0_.id
+09:36:36,338 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX -> systemx0_.id
+09:36:36,341 DEBUG org.hibernate.hql.internal.ast.tree.DotNode DotNode:599 - getDataType() : name -> org.hibernate.type.StringType@18116d8c
+09:36:36,347 DEBUG org.hibernate.hql.internal.ast.tree.FromReferenceNode FromReferenceNode:74 - Resolved : systemX.name -> systemx0_.name
+09:36:36,356 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:125 - select : finishing up [level=1, statement=select]
+09:36:36,357 DEBUG org.hibernate.hql.internal.ast.HqlSqlWalker HqlSqlWalker:629 - processQuery() :  ( SELECT ( {select clause} systemx0_.id ) ( FromClause{level=1} system systemx0_ ) ( where ( = ( systemx0_.name systemx0_.id name ) ? ) ) )
+09:36:36,376 DEBUG org.hibernate.hql.internal.ast.util.JoinProcessor JoinProcessor:177 - Using FROM fragment [system systemx0_]
+09:36:36,377 DEBUG org.hibernate.hql.internal.antlr.HqlSqlBaseWalker HqlSqlBaseWalker:129 - select >> end [level=1, statement=select]
+09:36:36,381 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:252 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (system)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'systemx0_.id as id1_0_' {alias=systemX, className=com.kaanha.migrate.core.persistence.domain.SystemX, tableAlias=systemx0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'systemx0_.name as name2_0_, systemx0_.version as version3_0_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[systemX], fromElementByTableAlias=[systemx0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'system systemx0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=systemX,role=null,tableName=system,tableAlias=systemx0_,origin=null,columns={,className=com.kaanha.migrate.core.persistence.domain.SystemX}}
+    \-[WHERE] SqlNode: 'where'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'systemx0_.name' {propertyName=name,dereferenceType=ALL,propertyPath=name,path=systemX.name,tableAlias=systemx0_,className=com.kaanha.migrate.core.persistence.domain.SystemX,classAlias=systemX}
+          |  +-[ALIAS_REF] IdentNode: 'systemx0_.id' {alias=systemX, className=com.kaanha.migrate.core.persistence.domain.SystemX, tableAlias=systemx0_}
+          |  \-[IDENT] IdentNode: 'name' {originalText=name}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=1, expectedType=org.hibernate.type.StringType@18116d8c}
+
+09:36:36,382 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:36:36,402 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:235 - HQL: select systemX
+from com.kaanha.migrate.core.persistence.domain.SystemX systemX
+where systemX.name = ?1
+09:36:36,403 DEBUG org.hibernate.hql.internal.ast.QueryTranslatorImpl QueryTranslatorImpl:236 - SQL: select systemx0_.id as id1_0_, systemx0_.name as name2_0_, systemx0_.version as version3_0_ from system systemx0_ where systemx0_.name=?
+09:36:36,404 DEBUG org.hibernate.hql.internal.ast.ErrorCounter ErrorCounter:82 - throwQueryException() : no errors
+09:36:36,476 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger SQL:104 - 
+    select
+        systemx0_.id as id1_0_,
+        systemx0_.name as name2_0_,
+        systemx0_.version as version3_0_ 
+    from
+        system systemx0_ 
+    where
+        systemx0_.name=?
+09:36:36,477 DEBUG org.hibernate.engine.jdbc.internal.LogicalConnectionImpl LogicalConnectionImpl:212 - Obtaining JDBC connection
+09:36:36,481 DEBUG org.hibernate.engine.jdbc.internal.LogicalConnectionImpl LogicalConnectionImpl:218 - Obtained JDBC connection
+09:36:36,522 DEBUG org.hibernate.loader.Loader Loader:941 - Result set row: 0
+09:36:36,527 DEBUG org.hibernate.loader.Loader Loader:1475 - Result row: EntityKey[com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:36:36,544 DEBUG org.hibernate.engine.internal.TwoPhaseLoad TwoPhaseLoad:158 - Resolving associations for [com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:36:36,562 DEBUG org.hibernate.engine.internal.TwoPhaseLoad TwoPhaseLoad:277 - Done materializing entity [com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:36:36,564 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:22 - connectTarget
+09:36:36,610 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:17 - connectSource
+09:36:36,707 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger SQL:104 - 
+    select
+        systemx0_.id as id1_0_,
+        systemx0_.name as name2_0_,
+        systemx0_.version as version3_0_ 
+    from
+        system systemx0_ 
+    where
+        systemx0_.name=?
+09:36:36,709 DEBUG org.hibernate.loader.Loader Loader:941 - Result set row: 0
+09:36:36,709 DEBUG org.hibernate.loader.Loader Loader:1475 - Result row: EntityKey[com.kaanha.migrate.core.persistence.domain.SystemX#1]
+09:36:36,710 DEBUG com.kannha.migrate.web.controller.MigrationServiceImpl MigrationServiceImpl:22 - connectTarget
+09:36:36,773 DEBUG com.kannha.migrate.web.controller.HomeController HomeController:24 - doHome

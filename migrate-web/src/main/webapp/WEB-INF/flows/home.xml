@@ -10,12 +10,12 @@
 	</view-state>
 	<action-state id="connect">
 		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
-		<transition on="success" to="fetchSourceFields" />
+		<transition on="yes" to="fetchSourceFields" />
 		<transition on="no" to="home" />
 	</action-state>
 	<action-state id="fetchSourceFields">
 		<evaluate expression="connectAction.connect(migrationRequest, messageContext)" />
-		<transition on="success" to="fetchTargetFields" />
+		<transition on="yes" to="fetchTargetFields" />
 		<transition on="no" to="home" />
 	</action-state>
 	<end-state id="fetchTargetFields" view="externalRedirect:contextRelative:/homes.do" />
