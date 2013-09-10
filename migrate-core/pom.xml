@@ -17,6 +17,12 @@
 		<hibernate.version>4.2.2.Final</hibernate.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<repositories>
+		<repository>
+			<id>jira-soap</id>
+			<url>https://maven.atlassian.com/content/repositories/atlassian-contrib/</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
