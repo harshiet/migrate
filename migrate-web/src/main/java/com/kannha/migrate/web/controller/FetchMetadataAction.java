@@ -29,6 +29,7 @@ public class FetchMetadataAction {
 		RallyMetadataReader rallyMetadataReader = new RallyMetadataReader(rally);
 		JsonObject rallyProjectMetdata = rallyMetadataReader
 				.readProjectMetadata();
+		logger.debug(rallyProjectMetdata);
 		return success;
 
 	}
