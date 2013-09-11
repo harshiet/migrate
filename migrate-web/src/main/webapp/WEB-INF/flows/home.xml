@@ -9,19 +9,27 @@
 		<transition on="submit" to="connectSource" />
 	</view-state>
 	<action-state id="connectSource">
-		<evaluate expression="connectAction.connectSource(migrationRequest, messageContext)" result="conversationScope.source"/>
+		<evaluate
+			expression="connectAction.connectSource(migrationRequest, messageContext)"
+			result="conversationScope.source" />
 		<transition on="success" to="connectTarget" />
 		<transition on="no" to="home" />
 	</action-state>
 	<action-state id="connectTarget">
-		<evaluate expression="connectAction.connectTarget(migrationRequest, messageContext)"  result="conversationScope.target"/>
+		<evaluate
+			expression="connectAction.connectTarget(migrationRequest, messageContext)"
+			result="conversationScope.target" />
 		<transition on="success" to="fetchSourceMetdata" />
 		<transition on="no" to="fetchSourceMetdata" />
 	</action-state>
 	<action-state id="fetchSourceMetdata">
-		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext, conversationScope.source)" />
+		<evaluate
+			expression="fetchMetadataAction.fetch(migrationRequest, messageContext, conversationScope.source)" />
 		<transition on="yes" to="fetchTargetFields" />
 		<transition on="no" to="home" />
 	</action-state>
-	<end-state id="fetchTargetFields" view="externalRedirect:contextRelative:/homes.do" />
+	<view-state id="fetchTargetFields" view="metadata">
+		<transition on="submit" to="reviewBooking" />
+	</view-state>
+
 </flow>
