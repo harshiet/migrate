@@ -14,21 +14,24 @@ import org.springframework.web.client.RestTemplate;
 
 public class RestApi {
 
-	private RestTemplate restTemplate;
+	private RestTemplate restTemplate = new RestTemplate();
 
 	public RestApi(String username, String password) {
-		restTemplate = new RestTemplate();
-		UsernamePasswordCredentials cred = new UsernamePasswordCredentials(username, password);
+
+		UsernamePasswordCredentials cred = new UsernamePasswordCredentials(
+				username, password);
 		BasicCredentialsProvider cp = new BasicCredentialsProvider();
 		cp.setCredentials(AuthScope.ANY, cred);
 		DefaultHttpClient client = new DefaultHttpClient();
 		client.setCredentialsProvider(cp);
-		ClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(client);
+		ClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory(
+				client);
 
 		restTemplate = new RestTemplate(factory);
 	}
 
-	public String get(String url) throws RestClientException, URISyntaxException {
+	public String get(String url) throws RestClientException,
+			URISyntaxException {
 		return restTemplate.getForObject(new URI(url), String.class);
 	}
 

@@ -26,7 +26,6 @@ public class RallyApi extends RestApi {
 	// private ObjectMapper mapper = new ObjectMapper();
 	private JsonParser jsonParser = new JsonParser();
 	private com.rallydev.rest.RallyRestApi api;
-
 	private SystemX system;
 
 	public RallyApi(String url, String username, String password)
@@ -39,8 +38,6 @@ public class RallyApi extends RestApi {
 		system = dbRepository.findSystemByName("Rally");
 		searchObjects(ArtifactType.SUBSCRIPTION);
 	}
-
-
 
 	//
 	// public JsonArray findAll(String name) throws RestClientException,
@@ -148,7 +145,7 @@ public class RallyApi extends RestApi {
 						.get("_ref").getAsString()).getAsJsonObject(
 				"QueryResult").getAsJsonArray("Results");
 	}
-	
+
 	public final void close() {
 		try {
 			api.close();

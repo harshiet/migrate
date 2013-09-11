@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Service;
-import org.springframework.webflow.execution.RequestContext;
 import org.swift.common.soap.jira.RemoteAuthenticationException;
 
 import com.kaanha.migrate.core.api.JiraApi;
@@ -18,37 +17,42 @@ public class ConnectAction {
 	MigrationService migrationService;
 	Logger logger = Logger.getLogger(this.getClass().getName());
 
-	public boolean connect(MigrationRequest migrationRequest,
-			MessageContext messageContext,
-			RequestContext requestContext) {
+	public Object connectSource(MigrationRequest migrationRequest,
+			MessageContext messageContext) {
 
-		boolean success = true;
+		RallyApi rally = null;
 		try {
-			RallyApi rally = migrationService.connectSource(migrationRequest);
-			requestContext.getFlowScope().put("rally", rally);
+			rally = migrationService.connectSource(migrationRequest);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
-			success = false;
 			messageContext.addMessage(new MessageBuilder().error()
 					.defaultText(e.getMessage()).build());
+			return false;
 		}
+		return rally;
+
+	}
+
+	public Object connectTarget(MigrationRequest migrationRequest,
+			MessageContext messageContext) {
+		JiraApi jira = null;
 		try {
-			JiraApi jira = migrationService.connectTarget(migrationRequest);
-			requestContext.getFlowScope().put("jira", jira);
+			jira = migrationService.connectTarget(migrationRequest);
+
 		} catch (RemoteAuthenticationException e) {
 			logger.error(e.getMessage(), e);
-			success = false;
 			messageContext.addMessage(new MessageBuilder().error()
 					.defaultText("Invalid username and password.").build());
+			return false;
 		} catch (Exception e) {
 			if (e.getMessage() != null) {
 				logger.error(e.getMessage(), e);
-				success = false;
 				messageContext.addMessage(new MessageBuilder().error()
 						.defaultText(e.getMessage()).build());
 			}
+			return false;
 		}
-		return success;
+		return jira;
 
 	}
 }

@@ -6,15 +6,20 @@
 		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<view-state id="home" view="home" model="migrationRequest">
-		<transition on="submit" to="connect" />
+		<transition on="submit" to="connectSource" />
 	</view-state>
-	<action-state id="connect">
-		<evaluate expression="connectAction.connect(migrationRequest, messageContext, flowRequestContext)" />
-		<transition on="yes" to="fetchSourceMetdata" />
+	<action-state id="connectSource">
+		<evaluate expression="connectAction.connectSource(migrationRequest, messageContext)" result="conversationScope.source"/>
+		<transition on="success" to="connectTarget" />
+		<transition on="no" to="home" />
+	</action-state>
+	<action-state id="connectTarget">
+		<evaluate expression="connectAction.connectTarget(migrationRequest, messageContext)"  result="conversationScope.target"/>
+		<transition on="success" to="fetchSourceMetdata" />
 		<transition on="no" to="home" />
 	</action-state>
 	<action-state id="fetchSourceMetdata">
-		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext, flowRequestContext)" />
+		<evaluate expression="fetchMetadataAction.fetch(migrationRequest, messageContext, flowScope.source)" />
 		<transition on="yes" to="fetchTargetFields" />
 		<transition on="no" to="home" />
 	</action-state>
